@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_normal">12dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">20dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_tiny">12sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_large">20sp</dimen>
+
+    <!-- Component Sizes -->
+    <dimen name="profile_image_size">40dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="search_bar_height">48dp</dimen>
+    <dimen name="popular_item_size">64dp</dimen>
+    <dimen name="popular_item_radius">32dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="nav_icon_container_size">48dp</dimen>
+    <dimen name="nav_icon_size">28dp</dimen>
+    <dimen name="nav_icon_size_small">24dp</dimen>
+    <dimen name="favorite_icon_size">40dp</dimen>
+
+    <!-- Card Properties -->
+    <dimen name="corner_radius_normal">12dp</dimen>
+    <dimen name="corner_radius_large">24dp</dimen>
+    <dimen name="corner_radius_xlarge">20dp</dimen>
+    <dimen name="corner_radius_xxlarge">32dp</dimen>
+    <dimen name="card_elevation_small">2dp</dimen>
+    <dimen name="card_elevation_medium">4dp</dimen>
+    <dimen name="card_elevation_large">8dp</dimen>
+
+    <!-- Image Heights -->
+    <dimen name="recommended_image_min_height">200dp</dimen>
+    <dimen name="recommended_image_max_height">280dp</dimen>
+
+    <!-- Top Bar -->
+    <dimen name="top_bar_margin">32dp</dimen>
+    <dimen name="topbar_horizontal_margin">16dp</dimen>
+    <dimen name="title_margin_start">12dp</dimen>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Monastery 360</string>
+
+    <!-- Language Selection -->
+    <string name="select_language">भाषा चुनें</string>
+    <string name="english">English</string>
+    <string name="hindi">हिंदी</string>
+    <string name="nepali">नेपाली</string>
+
+    <!-- Login Activity -->
+    <string name="dont_wait">इंतजार न करें।</string>
+    <string name="get_best_experience">अभी सबसे अच्छा अनुभव प्राप्त करें!</string>
+    <string name="log_in">लॉग इन करें</string>
+    <string name="dont_have_account">खाता नहीं है? साइन अप करें</string>
+
+    <!-- Start Activity -->
+    <string name="explore_journey">अपनी पसंदीदा\nयात्रा का अन्वेषण करें</string>
+    <string name="make_life_better">आइए अपने जीवन को बेहतर बनाएं</string>
+    <string name="go">शुरू करें</string>
+
+    <!-- Login Bottom Sheet -->
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="or_login_using">या लॉगिन करें</string>
+
+    <!-- Register Bottom Sheet -->
+    <string name="full_name">पूरा नाम</string>
+    <string name="confirm_password">पासवर्ड की पुष्टि करें</string>
+    <string name="create_account">खाता बनाएं</string>
+    <string name="or_continue_with">या जारी रखें</string>
+
+    <!-- Main Activity (Home) -->
+    <string name="greeting_name">नमस्ते जेनेलिया</string>
+    <string name="good_morning">सुप्रभात!</string>
+    <string name="profile_image">प्रोफ़ाइल चित्र</string>
+    <string name="notifications">सूचनाएं</string>
+    <string name="search">खोजें</string>
+    <string name="search_hint">मठों को खोजें...</string>
+    <string name="filter">फ़िल्टर</string>
+    <string name="popular">लोकप्रिय</string>
+    <string name="recommended">अनुशंसित</string>
+    <string name="show_all">सभी देखें</string>
+    <string name="what_we_offer">हम क्या प्रदान करते हैं</string>
+
+    <!-- Monastery Names -->
+    <string name="rumtek">रुमटेक</string>
+    <string name="pemayangtse">पेमायंग्त्से</string>
+    <string name="tashiding">ताशीदिंग</string>
+    <string name="enchey">एन्चे</string>
+    <string name="dubdi">डुबडी</string>
+
+    <!-- What We Offer Section -->
+    <string name="virtual_tours">वर्चुअल टूर</string>
+    <string name="virtual_tours_desc">360° दृश्यों के माध्यम से गंतव्यों का अन्वेषण करें</string>
+    <string name="local_guides">स्थानीय गाइड</string>
+    <string name="local_guides_desc">अनुभवी स्थानीय गाइडों से जुड़ें</string>
+    <string name="travel_tips">यात्रा सुझाव</string>
+    <string name="travel_tips_desc">अंदरूनी सुझाव और अनुशंसाएं प्राप्त करें</string>
+    <string name="weather_updates">मौसम अपडेट</string>
+    <string name="weather_updates_desc">योजना बनाने के लिए वास्तविक समय की मौसम जानकारी</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">होम</string>
+    <string name="favorite">पसंदीदा</string>
+    <string name="planning">योजना</string>
+    <string name="profile">प्रोफ़ाइल</string>
+
+    <!-- All Monasteries Activity -->
+    <string name="all_monasteries">सभी मठ</string>
+    <string name="search_monasteries">खोजें...</string>
+
+    <!-- Monastery Detail Activity -->
+    <string name="welcome_to">में आपका स्वागत है</string>
+    <string name="rumtek_monastery">रुमटेक मठ</string>
+    <string name="reviews">समीक्षा</string>
+    <string name="audio_guide">ऑडियो गाइड</string>
+    <string name="audio_duration">5:30 मिनट • हिंदी</string>
+    <string name="play_audio">ऑडियो गाइड चलाएं</string>
+    <string name="download_audio">ऑडियो डाउनलोड करें</string>
+    <string name="located_in">में स्थित</string>
+    <string name="gangtok_sikkim">गंगटोक, सिक्किम</string>
+    <string name="gangtok_address">गंगटोक, पूर्वी सिक्किम</string>
+    <string name="monastery_description">रुमटेक मठ, सिक्किम में स्थित, ग्रह पर सबसे आश्चर्यजनक प्राकृतिक चमत्कारों में से एक है। लाखों वर्षों में कोलोराडो नदी द्वारा उकेरा गया, ग्रैंड कैन्यन एक लुभावनी जगह है...</string>
+    <string name="read_more">और पढ़ें</string>
+    <string name="location">स्थान</string>
+    <string name="property_highlights">संपत्ति की मुख्य विशेषताएं</string>
+    <string name="top_location">शीर्ष स्थान</string>
+    <string name="top_location_desc">दक्षिण रिम सबसे अधिक देखा जाने वाला क्षेत्र है</string>
+    <string name="price">मूल्य</string>
+    <string name="price_amount">₹500/व्यक्ति</string>
+    <string name="book_visit">यात्रा बुक करें</string>
+
+    <!-- Common -->
+    <string name="back">वापस</string>
+    <string name="share">शेयर करें</string>
+    <string name="map">मानचित्र</string>
+
+</resources>

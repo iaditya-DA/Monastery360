@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Monastery 360</string>
+
+    <!-- Language Selection -->
+    <string name="select_language">Select Language</string>
+    <string name="english">English</string>
+    <string name="hindi">हिंदी</string>
+    <string name="nepali">नेपाली</string>
+
+    <!-- Login Activity -->
+    <string name="dont_wait">Don\'t wait.</string>
+    <string name="get_best_experience">Get best experience now!</string>
+    <string name="log_in">LOG IN</string>
+    <string name="dont_have_account">Don\'t have an Account? Sign Up</string>
+
+    <!-- Start Activity -->
+    <string name="explore_journey">Explore Your\nFavorite Journey</string>
+    <string name="make_life_better">Let\'s Make Our Life Better</string>
+    <string name="go">Go</string>
+
+    <!-- Login Bottom Sheet -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="or_login_using">Or Login using</string>
+
+    <!-- Register Bottom Sheet -->
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="or_continue_with">Or continue with</string>
+
+    <!-- Main Activity (Home) -->
+    <string name="greeting_name">Hey Jenelia</string>
+    <string name="good_morning">Good Morning!</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="notifications">Notifications</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search for monasteries...</string>
+    <string name="filter">Filter</string>
+    <string name="popular">Popular</string>
+    <string name="recommended">Recommended</string>
+    <string name="show_all">Show all</string>
+    <string name="what_we_offer">What We Offer</string>
+
+    <!-- Monastery Names -->
+    <string name="rumtek">Rumtek</string>
+    <string name="pemayangtse">Pemayangtse</string>
+    <string name="tashiding">Tashiding</string>
+    <string name="enchey">Enchey</string>
+    <string name="dubdi">Dubdi</string>
+
+    <!-- What We Offer Section -->
+    <string name="virtual_tours">Virtual Tours</string>
+    <string name="virtual_tours_desc">Explore destinations through immersive 360° views</string>
+    <string name="local_guides">Local Guides</string>
+    <string name="local_guides_desc">Connect with experienced local guides</string>
+    <string name="travel_tips">Travel Tips</string>
+    <string name="travel_tips_desc">Get insider tips and recommendations</string>
+    <string name="weather_updates">Weather Updates</string>
+    <string name="weather_updates_desc">Real-time weather information for planning</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="planning">Planning</string>
+    <string name="profile">Profile</string>
+
+    <!-- All Monasteries Activity -->
+    <string name="all_monasteries">All Monasteries</string>
+    <string name="search_monasteries">Search...</string>
+
+    <!-- Monastery Detail Activity -->
+    <string name="welcome_to">Welcome To</string>
+    <string name="rumtek_monastery">Rumtek Monastery</string>
+    <string name="reviews">Review</string>
+    <string name="audio_guide">Audio Guide</string>
+    <string name="audio_duration">5:30 mins • English</string>
+    <string name="play_audio">Play Audio Guide</string>
+    <string name="download_audio">Download Audio</string>
+    <string name="located_in">Located In</string>
+    <string name="gangtok_sikkim">Gangtok, Sikkim</string>
+    <string name="gangtok_address">Gangtok, East Sikkim</string>
+    <string name="monastery_description">Rumtek Monastery, located in Sikkim, is one of the most awe-inspiring natural wonders on the planet. Carved by the Colorado River over millions of years, the Grand Canyon is a breathtaking...</string>
+    <string name="read_more">Read more</string>
+    <string name="location">Location</string>
+    <string name="property_highlights">Property highlights</string>
+    <string name="top_location">Top location</string>
+    <string name="top_location_desc">The South Rim is the most visited area</string>
+    <string name="price">Price</string>
+    <string name="price_amount">₹500/person</string>
+    <string name="book_visit">Book Visit</string>
+
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="share">Share</string>
+    <string name="map">Map</string>
+    <string name="image_counter">image_counter</string>
+
+</resources>

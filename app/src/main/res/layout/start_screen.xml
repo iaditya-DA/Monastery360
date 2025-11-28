@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_mountains" />
+
+    <!-- Title Text Block -->
+    <LinearLayout
+        android:id="@+id/titleBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"> <!-- adjust marginTop as needed -->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/explore_journey"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_life_better"
+            android:textColor="#DCDCDC"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Bottom Go Button -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="40dp">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_fade">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_arrow_up"
+                app:tint="#FFFFFF"
+                android:layout_marginTop="6dp" />
+
+            <LinearLayout
+                android:id="@+id/btnGo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_bg"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/go"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

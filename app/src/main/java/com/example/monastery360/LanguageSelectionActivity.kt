@@ -2,14 +2,14 @@ package com.example.monastery360
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import androidx.cardview.widget.CardView
 import com.example.monastery360.utils.LocaleHelper
 
 class LanguageSelectionActivity : BaseActivity() {
 
-    private lateinit var btnEnglish: Button
-    private lateinit var btnHindi: Button
-    private lateinit var btnNepali: Button
+    private lateinit var btnEnglish: CardView
+    private lateinit var btnHindi: CardView
+    private lateinit var btnNepali: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

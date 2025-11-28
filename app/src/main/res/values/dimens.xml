@@ -43,4 +43,7 @@
     <dimen name="top_bar_margin">32dp</dimen>
     <dimen name="topbar_horizontal_margin">16dp</dimen>
     <dimen name="title_margin_start">12dp</dimen>
+    <dimen name="language_image_size">150dp</dimen>
+    <dimen name="language_image_margin_end">-30dp</dimen>
+    <dimen name="language_image_margin_bottom">-10dp</dimen>
 </resources>

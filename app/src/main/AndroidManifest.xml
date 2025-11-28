@@ -14,7 +14,7 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Monastery360">
 
-            <!-- Launcher activity: Language Selection -->
+
             <activity
                 android:name=".LanguageSelectionActivity"
                 android:exported="true"

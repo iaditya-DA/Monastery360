@@ -42,8 +42,6 @@ import retrofit2.http.Query
 import java.util.*
 import kotlin.math.roundToInt
 
-
-
 // Retrofit Data Classes for Directions API Response
 data class DirectionsResponse(
     @SerializedName("routes") val routes: List<Route>
@@ -71,7 +69,6 @@ data class Duration(
     @SerializedName("text") val text: String
 )
 
-
 // Retrofit Interface for API calls
 interface DirectionsApiService {
     @GET("maps/api/directions/json")
@@ -82,10 +79,8 @@ interface DirectionsApiService {
     ): Call<DirectionsResponse>
 }
 
-
 class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpeech.OnInitListener {
 
-    // --- All your existing variables ---
     private var googleMap: GoogleMap? = null
     private var latitude = 0.0
     private var longitude = 0.0
@@ -110,14 +105,13 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
     private var currentLocation: Location? = null
     private var currentLocationMarker: Marker? = null
 
-    // MODIFIED: Renamed directionPolyline to routePolyline for clarity
     private var routePolyline: Polyline? = null
 
     private var textToSpeech: TextToSpeech? = null
     private var isTTSInitialized = false
     private var isPlaying = false
     private val handler = Handler(Looper.getMainLooper())
-    private lateinit var runnable: Runnable
+    private var runnable: Runnable? = null
     private var currentLanguage = "en"
     private val languages = mapOf("en" to "English", "hi" to "हिंदी", "ne" to "नेपाली")
     private var audioText = ""
@@ -152,7 +146,6 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
     }
 
     private fun initViews() {
-        // ... (your existing initViews code is unchanged)
         btnBack = findViewById(R.id.btnBackMap)
         txtTitle = findViewById(R.id.txtMapTitle)
         txtLocationDetail = findViewById(R.id.txtLocationDetail)
@@ -168,10 +161,8 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         btnLanguage.setOnClickListener { showLanguageDialog() }
         btnMyLocation.setOnClickListener { getCurrentLocation(true) }
 
-        // MODIFIED: Directions button now calls getDirections()
         btnDirections.setOnClickListener {
             if (currentLocation != null) {
-                // Call the function to draw the route inside the app
                 getDirections()
             } else {
                 Toast.makeText(this, "Cannot get directions. Your location is not available.", Toast.LENGTH_SHORT).show()
@@ -179,24 +170,19 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         }
     }
 
-    // NEW FUNCTION: To get directions from the API
-    // NEW FUNCTION: To get directions from the API
     private fun getDirections() {
         if (currentLocation == null) {
             Toast.makeText(this, "Waiting for current location...", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Show a message to the user
         Toast.makeText(this, "Fetching directions...", Toast.LENGTH_SHORT).show()
 
         val origin = "${currentLocation!!.latitude},${currentLocation!!.longitude}"
         val destination = "$latitude,$longitude"
 
         try {
-            // FIXED: Read the API key from the AndroidManifest.xml metadata
             val apiKey = "AIzaSyA4o9p91MHBNWbK-G-Hco_eOUDUBpaIl2Q"
-
 
             if (apiKey.isNullOrEmpty()) {
                 Toast.makeText(this, "API key not found in Manifest.", Toast.LENGTH_LONG).show()
@@ -217,7 +203,6 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                             val points = routes[0].overviewPolyline.points
                             drawPolyline(points)
 
-                            // Update distance and duration text from API for more accuracy
                             val leg = routes[0].legs[0]
                             txtDistance.text = "${leg.distance.text} • ${leg.duration.text}"
                             txtDistance.visibility = View.VISIBLE
@@ -243,11 +228,7 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         }
     }
 
-
-    // NEW FUNCTION: To draw the route on the map
     private fun drawPolyline(encoded: String) {
-
-        // Clear old line
         routePolyline?.remove()
 
         val decodedPath = PolyUtil.decode(encoded)
@@ -255,12 +236,11 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         routePolyline = googleMap?.addPolyline(
             PolylineOptions()
                 .addAll(decodedPath)
-                .color(Color.BLUE)     // 🔥 Google Maps Blue Line
+                .color(Color.BLUE)
                 .width(12f)
                 .geodesic(true)
         )
 
-        // 🔥 Auto-fit camera to full route
         if (currentLocation != null) {
             val bounds = LatLngBounds.Builder()
                 .include(LatLng(currentLocation!!.latitude, currentLocation!!.longitude))
@@ -271,15 +251,12 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         }
     }
 
-
-
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
         googleMap?.mapType = GoogleMap.MAP_TYPE_NORMAL
 
         val monasteryLatLng = LatLng(latitude, longitude)
 
-        // Monastery marker
         googleMap?.addMarker(
             MarkerOptions()
                 .position(monasteryLatLng)
@@ -288,7 +265,6 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
         )
 
-        // 🔥 IMPORTANT: Map open होते ही monastery location पर zoom
         googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(monasteryLatLng, 15f))
 
         googleMap?.uiSettings?.apply {
@@ -301,7 +277,6 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         checkLocationPermission()
     }
 
-
     @SuppressLint("MissingPermission")
     private fun getCurrentLocation(moveCamera: Boolean) {
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
@@ -309,10 +284,8 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                 currentLocation = location
                 val userLatLng = LatLng(location.latitude, location.longitude)
 
-                // Remove old marker
                 currentLocationMarker?.remove()
 
-                // Add new marker
                 currentLocationMarker = googleMap?.addMarker(
                     MarkerOptions()
                         .position(userLatLng)
@@ -320,7 +293,6 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                 )
 
-                // 🔥 User ne "my location" dabaya tab hi camera move ho
                 if (moveCamera)
                     googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(userLatLng, 16f))
 
@@ -329,10 +301,6 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
             }
         }
     }
-
-
-    // --- All your other functions (onInit, setTTSLanguage, updateAudioText, updateDistance, audio guide functions, etc.) remain here unchanged ---
-    // I am including them below for completeness.
 
     private fun updateDistance() {
         if (currentLocation == null) {
@@ -350,14 +318,11 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         } else {
             "${distanceInMeters.roundToInt()} m away"
         }
-        // Don't show this if a route is active, as the route provides better info
         if (routePolyline == null) {
             txtDistance.text = distanceText
             txtDistance.visibility = View.VISIBLE
         }
     }
-
-    // ... all other functions like onInit, setTTSLanguage, setupAudioGuide, playAudio, pauseAudio, formatTime, etc. go here exactly as they were ...
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
@@ -397,7 +362,9 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                         seekBarAudio.progress = 0
                         txtCurrentTime.text = formatTime(0)
                         currentProgress = 0
-                        handler.removeCallbacks(runnable)
+                        if (runnable != null) {
+                            handler.removeCallbacks(runnable!!)
+                        }
                     }
                 }
 
@@ -431,7 +398,7 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
             }
         }
         val wordCount = audioText.split("\\s+".toRegex()).size
-        estimatedDuration = (wordCount * 60) / 150 // Duration in seconds
+        estimatedDuration = (wordCount * 60) / 150
     }
 
     private fun setupAudioGuide() {
@@ -456,8 +423,8 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                 }
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                if(isPlaying) {
-                    handler.removeCallbacks(runnable)
+                if(isPlaying && runnable != null) {
+                    handler.removeCallbacks(runnable!!)
                 }
             }
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
@@ -536,7 +503,9 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         textToSpeech?.stop()
         isPlaying = false
         btnPlayAudio.setImageResource(R.drawable.ic_play_circle)
-        handler.removeCallbacks(runnable)
+        if (runnable != null) {
+            handler.removeCallbacks(runnable!!)
+        }
     }
 
     private fun stopAudio() {
@@ -546,7 +515,9 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
         seekBarAudio.progress = 0
         txtCurrentTime.text = formatTime(0)
         currentProgress = 0
-        handler.removeCallbacks(runnable)
+        if (runnable != null) {
+            handler.removeCallbacks(runnable!!)
+        }
     }
 
     private fun startUpdatingSeekBar() {
@@ -555,10 +526,10 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                 currentProgress++
                 seekBarAudio.progress = currentProgress
                 txtCurrentTime.text = formatTime(currentProgress * 1000)
-                handler.postDelayed(runnable, 1000)
+                handler.postDelayed(runnable!!, 1000)
             }
         }
-        handler.postDelayed(runnable, 1000)
+        handler.postDelayed(runnable!!, 1000)
     }
 
     private fun formatTime(millis: Int): String {
@@ -569,6 +540,9 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
 
     override fun onDestroy() {
         stopAudio()
+        if (runnable != null) {
+            handler.removeCallbacks(runnable!!)
+        }
         textToSpeech?.shutdown()
         super.onDestroy()
     }

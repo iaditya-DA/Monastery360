@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Internet Permission -->
@@ -9,9 +8,13 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
 
     <application
@@ -23,19 +26,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Monastery360">
 
-        <!-- ✅ Google Maps API Key -->
+        <!-- Google Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA4o9p91MHBNWbK-G-Hco_eOUDUBpaIl2Q" />
 
+        <!-- Launcher -->
         <activity
             android:name=".LanguageSelectionActivity"
             android:exported="true"
             android:theme="@style/Theme.Monastery360"
             android:configChanges="locale|layoutDirection">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -50,6 +54,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false"
+            android:theme="@style/Theme.Monastery360"
             android:configChanges="locale|layoutDirection" />
 
         <activity
@@ -72,13 +77,46 @@
             android:theme="@style/Theme.Monastery360"
             android:configChanges="locale|layoutDirection" />
 
-        <!-- ✅ NEW: Full Screen Maps Activity -->
         <activity
             android:name=".MonasteryMapsActivity"
             android:exported="false"
             android:parentActivityName=".MonasteryDetailActivity"
             android:theme="@style/Theme.Monastery360"
             android:configChanges="locale|layoutDirection" />
+
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Monastery360"
+            android:configChanges="locale|layoutDirection" />
+
+        <!-- ⭐ Profile Features -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Monastery360"
+            android:configChanges="locale|layoutDirection" />
+
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity"
+            android:theme="@style/Theme.Monastery360"
+            android:configChanges="locale|layoutDirection" />
+
+        <activity
+            android:name=".LocationMapActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity"
+            android:theme="@style/Theme.Monastery360"
+            android:configChanges="locale|layoutDirection" />
+
+        <activity
+            android:name=".MonasteryWeatherActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
 
     </application>
 

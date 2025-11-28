@@ -102,5 +102,7 @@
     <string name="_2_30_english">2:30 • English</string>
     <string name="tap_marker_to_view_details">Tap marker to view details</string>
     <string name="directions">Directions</string>
+    <string name="no_favorites_yet">No Fav yet\n</string>
+    <string name="my_favorites">My Favorite\n</string>
 
 </resources>

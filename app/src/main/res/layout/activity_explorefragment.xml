@@ -488,15 +488,15 @@
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:src="@drawable/ic_guide"
+                            android:src="@drawable/ic_weather_cloud"
                             android:background="@drawable/circle_icon_background"
                             android:padding="12dp"
-                            android:contentDescription="@string/local_guides"/>
+                            android:contentDescription="@string/weather_updates"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/local_guides"
+                            android:text="@string/weather_updates"
                             android:textSize="14sp"
                             android:textColor="#000000"
                             android:textStyle="bold"
@@ -505,7 +505,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/local_guides_desc"
+                            android:text="@string/weather_updates_desc"
                             android:textSize="11sp"
                             android:textColor="#666666"
                             android:gravity="center"
@@ -534,7 +534,7 @@
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:src="@drawable/ic_tips"
+                            android:src="@drawable/ic_guide"
                             android:background="@drawable/circle_icon_background"
                             android:padding="12dp"
                             android:contentDescription="@string/travel_tips"/>
@@ -542,7 +542,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/travel_tips"
+                            android:text="@string/local_guides"
                             android:textSize="14sp"
                             android:textColor="#000000"
                             android:textStyle="bold"
@@ -551,7 +551,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/travel_tips_desc"
+                            android:text="@string/weather_updates_desc"
                             android:textSize="11sp"
                             android:textColor="#666666"
                             android:gravity="center"
@@ -580,7 +580,7 @@
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:src="@drawable/ic_weather"
+                            android:src="@drawable/ic_tips"
                             android:background="@drawable/circle_icon_background"
                             android:padding="12dp"
                             android:contentDescription="@string/weather_updates"/>
@@ -588,7 +588,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/weather_updates"
+                            android:text="@string/travel_tips"
                             android:textSize="14sp"
                             android:textColor="#000000"
                             android:textStyle="bold"
@@ -597,7 +597,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/weather_updates_desc"
+                            android:text="@string/travel_tips_desc"
                             android:textSize="11sp"
                             android:textColor="#666666"
                             android:gravity="center"

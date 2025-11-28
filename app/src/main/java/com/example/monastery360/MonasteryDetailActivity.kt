@@ -167,7 +167,7 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
         val monastery = MonasteryRepository.getAllMonasteries()
             .find { it.name == monasteryNameIntent } ?: return
 
-        // ✅ Setup Image Slider with monastery images
+
         val imageList = monastery.images
 
         val adapter = ImageSliderAdapter(imageList)
@@ -177,7 +177,7 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
         viewPagerImages.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
+              super.onPageSelected(position)
                 txtImageCounter.text = "${position + 1}/${imageList.size}"
             }
         })

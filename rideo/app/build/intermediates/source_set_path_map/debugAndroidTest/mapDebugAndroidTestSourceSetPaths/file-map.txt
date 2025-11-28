@@ -1,0 +1,5 @@
+com.example.rideo.test.app-androidTest-0 C:\AndroidProjects\rideo\app\build\generated\res\resValues\androidTest\debug
+com.example.rideo.test.app-mergeDebugAndroidTestResources-1 C:\AndroidProjects\rideo\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.rideo.test.app-mergeDebugAndroidTestResources-2 C:\AndroidProjects\rideo\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.rideo.test.app-debugAndroidTest-3 C:\AndroidProjects\rideo\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.example.rideo.test.app-core-1.6.1-4 C:\Users\ADITYA KUMAR JHA\.gradle\caches\transforms-4\8c23efd4eaed022f2087d0517e69c6d1\transformed\core-1.6.1\res

@@ -1,5 +1,6 @@
 package com.example.monastery360
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,10 +8,10 @@ import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.monastery360.adapter.ImageSliderAdapter
 import com.example.monastery360.repository.MonasteryRepository
-import com.example.monastery360.utils.LocaleHelper
 
 import java.util.*
 
@@ -43,6 +44,9 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
     private lateinit var btnReadMore: TextView
     private lateinit var txtPrice: TextView
 
+    // Map Section
+    private lateinit var mapCardView: CardView
+
     private lateinit var btnBookVisit: Button
 
     // State variables
@@ -59,6 +63,11 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
     private var audioText = ""
     private var estimatedDuration = 0
     private var currentProgress = 0
+
+    // Location data
+    private var latitude = 0.0
+    private var longitude = 0.0
+    private var monasteryName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,10 +90,8 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
                 isTTSInitialized = false
             } else {
                 isTTSInitialized = true
-                // Set speech rate (1.0 is normal speed)
                 textToSpeech?.setSpeechRate(0.9f)
 
-                // Set up utterance progress listener
                 textToSpeech?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
                     override fun onStart(utteranceId: String?) {
                         runOnUiThread {
@@ -146,26 +153,26 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
         btnReadMore = findViewById(R.id.btnReadMore)
         txtPrice = findViewById(R.id.txtPrice)
 
+        // Map Section
+        mapCardView = findViewById(R.id.mapCardView)
+
         btnBookVisit = findViewById(R.id.btnBookVisit)
     }
 
     private fun loadMonasteryData() {
-        val monasteryName = intent.getStringExtra("MONASTERY_NAME") ?: return
+        // Get monastery name from intent
+        val monasteryNameIntent = intent.getStringExtra("MONASTERY_NAME") ?: return
 
+        // Find the monastery from repository
         val monastery = MonasteryRepository.getAllMonasteries()
-            .find { it.name == monasteryName } ?: return
+            .find { it.name == monasteryNameIntent } ?: return
 
-        // Setup Image Slider
-        val imageList = listOf(
-            monastery.imageRes,
-            monastery.imageRes,
-            monastery.imageRes
-        )
+        // ✅ Setup Image Slider with monastery images
+        val imageList = monastery.images
 
         val adapter = ImageSliderAdapter(imageList)
         viewPagerImages.adapter = adapter
 
-        // Update image counter
         txtImageCounter.text = "1/${imageList.size}"
 
         viewPagerImages.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -175,7 +182,10 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
             }
         })
 
-        // Set monastery data
+
+
+    // Set monastery data
+        monasteryName = monastery.name
         txtMonasteryName.text = monastery.name
         txtRating.text = monastery.rating.toString()
         txtReviews.text = "(${monastery.reviews} Review)"
@@ -184,7 +194,11 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
         txtDescription.text = monastery.description
         txtPrice.text = monastery.price
 
-        // ✅ Prepare audio text (description + location info)
+        // Store location coordinates
+        latitude = monastery.latitude
+        longitude = monastery.longitude
+
+        // Prepare audio text
         audioText = buildString {
             append("Welcome to ${monastery.name}. ")
             append("Located in ${monastery.location}. ")
@@ -192,11 +206,10 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
             append(monastery.description)
         }
 
-        // ✅ Calculate estimated duration (roughly 150 words per minute)
+        // Calculate estimated duration
         val wordCount = audioText.split("\\s+".toRegex()).size
-        estimatedDuration = (wordCount * 60) / 150 // seconds
+        estimatedDuration = (wordCount * 60) / 150
 
-        // Update UI with estimated duration
         txtAudioDuration.text = "${formatTime(estimatedDuration * 1000)} • English"
         txtTotalTime.text = formatTime(estimatedDuration * 1000)
         seekBarAudio.max = estimatedDuration
@@ -222,10 +235,13 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
         btnShare.setOnClickListener {
             Toast.makeText(this, "Share clicked", Toast.LENGTH_SHORT).show()
-            // TODO: Implement share functionality
         }
 
-        // ✅ Audio Play/Pause Button
+        // ✅ Map Click Listener - Opens Full Screen Map Activity
+        mapCardView.setOnClickListener {
+            openFullScreenMap()
+        }
+
         btnPlayAudio.setOnClickListener {
             if (!isTTSInitialized) {
                 Toast.makeText(this, "Audio guide is still loading...", Toast.LENGTH_SHORT).show()
@@ -239,11 +255,9 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
             }
         }
 
-        // ✅ SeekBar listener (Note: TTS doesn't support seeking, so we restart from beginning)
         seekBarAudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser && isPlaying) {
-                    // TTS doesn't support seeking, so we'll just restart
                     Toast.makeText(this@MonasteryDetailActivity, "Restarting audio...", Toast.LENGTH_SHORT).show()
                     stopAudio()
                     playAudio()
@@ -256,7 +270,6 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
         btnDownloadAudio.setOnClickListener {
             Toast.makeText(this, "Audio guide saved for offline use", Toast.LENGTH_SHORT).show()
-            // This is TTS so no actual download needed
         }
 
         btnReadMore.setOnClickListener {
@@ -267,11 +280,19 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
         btnBookVisit.setOnClickListener {
             Toast.makeText(this, "Book Visit clicked", Toast.LENGTH_SHORT).show()
-            // TODO: Navigate to booking screen
         }
     }
 
-    // ✅ Audio Player Functions using Text-to-Speech
+    // ✅ Open Full Screen Map Activity
+    private fun openFullScreenMap() {
+        val intent = Intent(this, MonasteryMapsActivity::class.java)
+        intent.putExtra("LATITUDE", latitude)
+        intent.putExtra("LONGITUDE", longitude)
+        intent.putExtra("MONASTERY_NAME", monasteryName)
+        intent.putExtra("MONASTERY_ADDRESS", txtAddress.text.toString())
+        startActivity(intent)
+    }
+
     private fun playAudio() {
         if (!isTTSInitialized) {
             Toast.makeText(this, "Text-to-Speech not ready", Toast.LENGTH_SHORT).show()
@@ -287,7 +308,6 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
             isPlaying = true
             btnPlayAudio.setImageResource(R.drawable.ic_pause_circle)
 
-            // Start progress simulation
             updateSeekBar()
 
         } catch (e: Exception) {
@@ -323,7 +343,6 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
                     handler.postDelayed(this, 1000)
                 } else if (currentProgress >= estimatedDuration) {
-                    // Audio finished
                     isPlaying = false
                     btnPlayAudio.setImageResource(R.drawable.ic_play_circle)
                     seekBarAudio.progress = 0

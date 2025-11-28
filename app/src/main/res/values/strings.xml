@@ -96,5 +96,11 @@
     <string name="share">Share</string>
     <string name="map">Map</string>
     <string name="image_counter">image_counter</string>
+    <string name="monastery">Monastery</string>
+    <string name="change_language">Change Language</string>
+    <string name="my_location">My Location</string>
+    <string name="_2_30_english">2:30 • English</string>
+    <string name="tap_marker_to_view_details">Tap marker to view details</string>
+    <string name="directions">Directions</string>
 
 </resources>

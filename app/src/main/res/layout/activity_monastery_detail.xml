@@ -174,19 +174,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4.9"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginStart="4dp" />
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp" />
 
                 <TextView
                     android:id="@+id/txtReviews"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(455 Review)"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:layout_marginStart="4dp" />
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp" />
 
             </LinearLayout>
 
@@ -244,7 +244,7 @@
                             android:alpha="0.8"
                             android:layout_marginTop="4dp" />
 
-                        <!-- Progress Bar (Times are dynamic, keeping as hardcoded values for now) -->
+                        <!-- Progress Bar -->
                         <SeekBar
                             android:id="@+id/seekBarAudio"
                             android:layout_width="match_parent"
@@ -268,24 +268,24 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="0:00"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp"
-                            android:alpha="0.7" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="10sp"
+                                android:alpha="0.7" />
 
                             <TextView
                                 android:id="@+id/txtTotalTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="5:30"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp"
-                            android:alpha="0.7" />
+                                android:textColor="#FFFFFF"
+                                android:textSize="10sp"
+                                android:alpha="0.7" />
 
                         </LinearLayout>
 
                     </LinearLayout>
 
-                    <!-- Volume/Download Icon -->
+                    <!-- Download Icon -->
                     <ImageView
                         android:id="@+id/btnDownloadAudio"
                         android:layout_width="40dp"
@@ -371,7 +371,7 @@
                 android:focusable="true"
                 android:background="?attr/selectableItemBackground" />
 
-            <!-- Map Section -->
+            <!-- Map Section Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -381,29 +381,58 @@
                 android:textStyle="bold"
                 android:layout_marginTop="24dp" />
 
-            <!-- Map Placeholder -->
+            <!-- ✅ Map Placeholder - Clickable to open full screen map -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/mapCardView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="12dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:id="@+id/imgMap"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_location_pinic_location_pin"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/map" />
+                    android:background="#F0F0F0">
 
-                <!-- Map Marker -->
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_location_pinic_location_pin"
-                    app:tint="#FF0000" />
+                    <!-- Map Image Placeholder -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_location_pinic_location_pin"
+                        android:scaleType="centerCrop"
+                        android:alpha="0.3" />
+
+                    <!-- Location Marker -->
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_location_pinic_location_pin"
+
+                        android:scaleType="centerInside" />
+
+                    <!-- "Tap to View Full Map" Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:text="Tap to view full map"
+                        android:textColor="#5B4ECC"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/rounded_button_white"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 

@@ -48,7 +48,7 @@ class MainActivity : BaseActivity() {
         showAllRecommended = findViewById(R.id.showAllRecommended)
 
         // ✅ Use Repository for data
-        val monasteryList = MonasteryRepository.getPreviewList()
+        val monasteryList = MonasteryRepository.getAllMonasteries()
 
         // ✅ Pass onItemClick lambda to adapter
         val adapter = MonasteryAdapter(

@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.monastery360.R
 
 class ImageSliderAdapter(
-    private val imageList: List<Int>
+    private val imageList: List<String>  // URLs now
 ) : RecyclerView.Adapter<ImageSliderAdapter.ImageViewHolder>() {
 
     inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,7 +23,11 @@ class ImageSliderAdapter(
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.imageView.setImageResource(imageList[position])
+        val imageUrl = imageList[position]
+        Glide.with(holder.imageView.context)
+            .load(imageUrl)
+            .placeholder(R.drawable.ic_placeholder)  // optional placeholder
+            .into(holder.imageView)
     }
 
     override fun getItemCount(): Int = imageList.size

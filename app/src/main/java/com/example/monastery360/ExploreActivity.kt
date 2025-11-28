@@ -15,12 +15,10 @@ import com.example.monastery360.model.Monastery
 import com.example.monastery360.repository.MonasteryRepository
 import com.example.monastery360.utils.LocaleHelper
 
-
-
 class MainActivity : BaseActivity() {
 
     private lateinit var recyclerRecommended: RecyclerView
-    private lateinit var showAllRecommended: TextView  // ✅ Add this
+    private lateinit var showAllRecommended: TextView
 
     // Bottom Nav
     private lateinit var navHome: LinearLayout
@@ -38,7 +36,6 @@ class MainActivity : BaseActivity() {
     private lateinit var navPlanText: TextView
     private lateinit var navProfileText: TextView
 
-    // ✅ Cache colors and track current selection
     private val selectedTintColor by lazy { Color.parseColor("#5B4ECC") }
     private val defaultTintColor by lazy { Color.parseColor("#808080") }
     private var currentSelectedIndex = 0
@@ -48,12 +45,23 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_explorefragment)
 
         recyclerRecommended = findViewById(R.id.recyclerRecommended)
-        showAllRecommended = findViewById(R.id.showAllRecommended)  // ✅ Initialize
+        showAllRecommended = findViewById(R.id.showAllRecommended)
 
         // ✅ Use Repository for data
         val monasteryList = MonasteryRepository.getPreviewList()
 
-        val adapter = MonasteryAdapter(monasteryList)
+        // ✅ Pass onItemClick lambda to adapter
+        val adapter = MonasteryAdapter(
+            list = monasteryList,
+            isVertical = false,
+            onItemClick = { monastery ->
+                // Open MonasteryDetailActivity
+                val intent = Intent(this, MonasteryDetailActivity::class.java)
+                intent.putExtra("MONASTERY_NAME", monastery.name)
+                startActivity(intent)
+            }
+        )
+
         recyclerRecommended.adapter = adapter
         recyclerRecommended.layoutManager = LinearLayoutManager(
             this,
@@ -77,18 +85,15 @@ class MainActivity : BaseActivity() {
         setSelectedNav(0)
     }
 
-    // ✅ New function for Show All button
     private fun setupShowAllButton() {
         showAllRecommended.setOnClickListener {
             val intent = Intent(this, AllMonasteriesActivity::class.java)
             startActivity(intent)
-
-            // Optional: Add smooth transition animation
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 
-    // ✅ Custom ItemDecoration for spacing between cards
+
     inner class CardPeekItemDecoration(private val spacing: Int) : RecyclerView.ItemDecoration() {
         override fun getItemOffsets(
             outRect: Rect,
@@ -98,7 +103,6 @@ class MainActivity : BaseActivity() {
         ) {
             val position = parent.getChildAdapterPosition(view)
 
-            // Add spacing between items (except last item)
             if (position < state.itemCount - 1) {
                 outRect.right = spacing
             }
@@ -129,32 +133,33 @@ class MainActivity : BaseActivity() {
         navProfile.setOnClickListener { setSelectedNav(3) }
     }
 
-    private fun setSelectedNav(selectedIndex: Int) {
-        // ✅ Prevent redundant updates
-        if (currentSelectedIndex == selectedIndex) return
-        currentSelectedIndex = selectedIndex
 
-        val navItems = listOf(navHome, navFav, navPlan, navProfile)
-        val navIcons = listOf(navHomeIcon, navFavIcon, navPlanIcon, navProfileIcon)
-        val navTexts = listOf(navHomeText, navFavText, navPlanText, navProfileText)
 
-        navItems.forEachIndexed { index, itemLayout ->
-            val icon = navIcons[index]
-            val text = navTexts[index]
+        private fun setSelectedNav(selectedIndex: Int) {
+            if (currentSelectedIndex == selectedIndex) return
+            currentSelectedIndex = selectedIndex
 
-            if (index == selectedIndex) {
-                itemLayout.orientation = LinearLayout.HORIZONTAL
-                text.visibility = View.VISIBLE
-                itemLayout.setBackgroundResource(R.drawable.nav_item_active_background)
-                icon.setColorFilter(selectedTintColor, PorterDuff.Mode.SRC_IN)
-                text.setTextColor(selectedTintColor)
-            } else {
-                itemLayout.orientation = LinearLayout.VERTICAL
-                text.visibility = View.GONE
-                itemLayout.setBackgroundColor(Color.TRANSPARENT)
-                icon.setColorFilter(defaultTintColor, PorterDuff.Mode.SRC_IN)
-                text.setTextColor(defaultTintColor)
+            val navItems = listOf(navHome, navFav, navPlan, navProfile)
+            val navIcons = listOf(navHomeIcon, navFavIcon, navPlanIcon, navProfileIcon)
+            val navTexts = listOf(navHomeText, navFavText, navPlanText, navProfileText)
+
+            navItems.forEachIndexed { index, itemLayout ->
+                val icon = navIcons[index]
+                val text = navTexts[index]
+
+                if (index == selectedIndex) {
+                    itemLayout.orientation = LinearLayout.HORIZONTAL
+                    text.visibility = View.VISIBLE
+                    itemLayout.setBackgroundResource(R.drawable.nav_item_active_background)
+                    icon.setColorFilter(selectedTintColor, PorterDuff.Mode.SRC_IN)
+                    text.setTextColor(selectedTintColor)
+                } else {
+                    itemLayout.orientation = LinearLayout.VERTICAL
+                    text.visibility = View.GONE
+                    itemLayout.setBackgroundColor(Color.TRANSPARENT)
+                    icon.setColorFilter(defaultTintColor, PorterDuff.Mode.SRC_IN)
+                    text.setTextColor(defaultTintColor)
+                }
             }
         }
     }
-}

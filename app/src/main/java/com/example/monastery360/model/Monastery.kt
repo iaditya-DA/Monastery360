@@ -9,5 +9,8 @@ data class Monastery(
     val location: String = "Gangtok, Sikkim",
     val address: String = "Gangtok, East Sikkim",
     val description: String = "One of the largest and most significant monasteries in Sikkim. Built in the traditional Buddhist architectural style with stunning mountain views.",
-    val price: String = "₹500/person"
+    val price: String = "₹500/person",
+
+    // ❤️ Add this line
+    var isFavorite: Boolean = false
 )

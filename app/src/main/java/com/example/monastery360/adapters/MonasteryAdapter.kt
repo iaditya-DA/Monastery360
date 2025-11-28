@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monastery360.model.Monastery
 
@@ -18,6 +19,7 @@ class MonasteryAdapter(
         val img: ImageView = itemView.findViewById(R.id.imgMonastery)
         val name: TextView = itemView.findViewById(R.id.txtName)
         val distance: TextView = itemView.findViewById(R.id.txtDistance)
+        val favIcon: ImageView = itemView.findViewById(R.id.favIcon)   // ❤️
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,6 +32,7 @@ class MonasteryAdapter(
         val view = LayoutInflater.from(parent.context)
             .inflate(layoutId, parent, false)
 
+        // Horizontal card width adjust
         if (!isVertical) {
             val displayMetrics = parent.context.resources.displayMetrics
             val screenWidth = displayMetrics.widthPixels
@@ -42,10 +45,34 @@ class MonasteryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val monastery = list[position]
+
         holder.img.setImageResource(monastery.imageRes)
         holder.name.text = monastery.name
         holder.distance.text = monastery.distance
 
+        // ❤️ Set favorite icon
+        holder.favIcon.setImageResource(
+            if (monastery.isFavorite) R.drawable.ic_favorite_filled
+            else R.drawable.favorite
+        )
+
+        // ❤️ Toggle favorite on click
+        holder.favIcon.setOnClickListener {
+            monastery.isFavorite = !monastery.isFavorite
+
+            holder.favIcon.setImageResource(
+                if (monastery.isFavorite) R.drawable.ic_favorite_filled
+                else R.drawable.favorite
+            )
+
+            Toast.makeText(
+                holder.itemView.context,
+                if (monastery.isFavorite) "Added to favorites" else "Removed from favorites",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        // Open details
         holder.itemView.setOnClickListener {
             onItemClick(monastery)
         }

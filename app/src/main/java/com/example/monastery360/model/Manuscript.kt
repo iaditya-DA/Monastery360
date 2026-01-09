@@ -1,0 +1,9 @@
+data class DigitalArchive(
+    val _id: String,
+    val monasteryId: String,
+    val title: String,
+    val type: String,
+    val fileUrl: String,
+    val description: String,
+    val images: List<String>
+) : java.io.Serializable

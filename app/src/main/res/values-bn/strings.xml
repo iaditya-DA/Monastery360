@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">মোনাস্টারি 360</string>
+
+    <!-- Profile Menu -->
+    <string name="menu_favourites">পছন্দের তালিকা</string>
+    <string name="menu_languages">ভাষা</string>
+    <string name="menu_location">অবস্থান</string>
+    <string name="menu_clear_cache">ক্যাশ পরিষ্কার করুন</string>
+    <string name="menu_clear_history">ইতিহাস মুছুন</string>
+    <string name="menu_logout">লগ আউট</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_clear_cache">ক্যাশ পরিষ্কার করুন</string>
+    <string name="dialog_clear_history">ইতিহাস মুছুন</string>
+    <string name="dialog_logout">লগ আউট</string>
+    <string name="dialog_are_you_sure">আপনি কি নিশ্চিত?</string>
+    <string name="dialog_logout_confirm">আপনি কি সত্যিই লগ আউট করতে চান?</string>
+    <string name="dialog_cache_cleared">ক্যাশ সফলভাবে পরিষ্কার হয়েছে</string>
+    <string name="dialog_history_cleared">ইতিহাস সফলভাবে মুছে ফেলা হয়েছে</string>
+    <string name="dialog_yes">হ্যাঁ</string>
+    <string name="dialog_no">না</string>
+
+    <!-- Language Selection -->
+    <string name="select_language">ভাষা নির্বাচন করুন</string>
+    <string name="english">ইংরেজি</string>
+    <string name="hindi">হিন্দি</string>
+    <string name="nepali">নেপালি</string>
+
+    <!-- Login Activity -->
+    <string name="dont_wait">অপেক্ষা করবেন না।</string>
+    <string name="get_best_experience">এখনই সেরা অভিজ্ঞতা নিন!</string>
+    <string name="log_in">লগ ইন</string>
+    <string name="dont_have_account">অ্যাকাউন্ট নেই? সাইন আপ করুন</string>
+
+    <!-- Start Activity -->
+    <string name="explore_journey">আপনার প্রিয়\nযাত্রা আবিষ্কার করুন</string>
+    <string name="make_life_better">চলুন জীবনটাকে আরও সুন্দর করি</string>
+    <string name="go">চলুন</string>
+
+    <!-- Login Bottom Sheet -->
+    <string name="email">ইমেইল</string>
+    <string name="password">পাসওয়ার্ড</string>
+    <string name="or_login_using">অথবা লগ ইন করুন</string>
+
+    <!-- Register Bottom Sheet -->
+    <string name="full_name">পূর্ণ নাম</string>
+    <string name="confirm_password">পাসওয়ার্ড নিশ্চিত করুন</string>
+    <string name="create_account">অ্যাকাউন্ট তৈরি করুন</string>
+    <string name="or_continue_with">অথবা চালিয়ে যান</string>
+
+    <!-- Main Activity (Home) -->
+    <string name="greeting_name">হাই জেনেলিয়া</string>
+    <string name="good_morning">সুপ্রভাত!</string>
+    <string name="profile_image">প্রোফাইল ছবি</string>
+    <string name="notifications">নোটিফিকেশন</string>
+    <string name="search">খুঁজুন</string>
+    <string name="search_hint">মঠ খুঁজুন...</string>
+    <string name="filter">ফিল্টার</string>
+    <string name="popular">জনপ্রিয়</string>
+    <string name="recommended">সুপারিশকৃত</string>
+    <string name="show_all">সব দেখুন</string>
+    <string name="what_we_offer">আমরা কী অফার করি</string>
+
+    <!-- Monastery Names -->
+    <string name="rumtek">রুমটেক</string>
+    <string name="pemayangtse">পেমায়াংতসে</string>
+    <string name="tashiding">তাশিদিং</string>
+    <string name="enchey">এনচে</string>
+    <string name="dubdi">ডুবডি</string>
+
+    <!-- What We Offer Section -->
+    <string name="virtual_tours">ভার্চুয়াল ভ্রমণ</string>
+    <string name="virtual_tours_desc">360° দৃশ্যের মাধ্যমে গন্তব্যগুলি আবিষ্কার করুন</string>
+    <string name="local_guides">স্থানীয় গাইড</string>
+    <string name="local_guides_desc">অভিজ্ঞ স্থানীয় গাইডের সাথে সংযোগ করুন</string>
+    <string name="travel_tips">ভ্রমণ পরামর্শ</string>
+    <string name="travel_tips_desc">অভ্যন্তরীণ পরামর্শ এবং সুপারিশ পান</string>
+    <string name="weather_updates">আবহাওয়া তথ্য</string>
+    <string name="weather_updates_desc">পরিকল্পনার জন্য রিয়েল-টাইম আবহাওয়া তথ্য</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">হোম</string>
+    <string name="favorite">পছন্দের</string>
+    <string name="planning">পরিকল্পনা</string>
+    <string name="profile">প্রোফাইল</string>
+
+    <!-- All Monasteries Activity -->
+    <string name="all_monasteries">সকল মঠ</string>
+    <string name="search_monasteries">অনুসন্ধান...</string>
+
+    <!-- Monastery Detail Activity -->
+    <string name="welcome_to">স্বাগতম</string>
+    <string name="rumtek_monastery">রুমটেক মঠ</string>
+    <string name="reviews">রিভিউ</string>
+    <string name="audio_guide">অডিও গাইড</string>
+    <string name="audio_duration">5:30 মিনিট • ইংরেজি</string>
+    <string name="play_audio">অডিও গাইড চালান</string>
+    <string name="download_audio">অডিও ডাউনলোড করুন</string>
+    <string name="located_in">অবস্থান</string>
+    <string name="gangtok_sikkim">গ্যাংটক, সিকিম</string>
+    <string name="gangtok_address">গ্যাংটক, পূর্ব সিকিম</string>
+    <string name="monastery_description">রুমটেক মঠ, সিকিমে অবস্থিত, পৃথিবীর অন্যতম বিস্ময়কর প্রাকৃতিক আশ্চর্যগুলির মধ্যে একটি। এটি দর্শনীয় প্রাকৃতিক দৃশ্য এবং ঐতিহাসিক গুরুত্বের কারণে একটি গুরুত্বপূর্ণ পর্যটন কেন্দ্র।</string>
+    <string name="read_more">আরও পড়ুন</string>
+    <string name="location">অবস্থান</string>
+    <string name="property_highlights">বিশেষত্ব</string>
+    <string name="top_location">সর্বোচ্চ স্থান</string>
+    <string name="top_location_desc">দক্ষিণ প্রান্ত সবচেয়ে ভিজিট করা এলাকা</string>
+    <string name="price">মূল্য</string>
+    <string name="price_amount">₹500/প্রতি ব্যক্তি</string>
+    <string name="book_visit">ভ্রমণ বুক করুন</string>
+
+    <!-- Common -->
+    <string name="back">পেছনে</string>
+    <string name="share">শেয়ার</string>
+    <string name="map">মানচিত্র</string>
+    <string name="image_counter">ছবির গণনা</string>
+    <string name="monastery">মঠ</string>
+    <string name="change_language">ভাষা পরিবর্তন করুন</string>
+    <string name="my_location">আমার অবস্থান</string>
+    <string name="_2_30_english">2:30 • ইংরেজি</string>
+    <string name="tap_marker_to_view_details">বিস্তারিত দেখতে মার্কার ট্যাপ করুন</string>
+    <string name="directions">দিকনির্দেশনা</string>
+    <string name="no_favorites_yet">এখনও কোনো পছন্দ নেই\n</string>
+    <string name="my_favorites">আমার পছন্দের\n</string>
+    <string name="edit_profile">প্রোফাইল সম্পাদনা করুন</string>
+    <string name="first_name">নামের প্রথম অংশ</string>
+    <string name="enter_first_name">নামের প্রথম অংশ লিখুন</string>
+    <string name="last_name">নামের শেষাংশ</string>
+    <string name="enter_last_name">নামের শেষাংশ লিখুন</string>
+    <string name="username">ব্যবহারকারীর নাম</string>
+    <string name="enter_username">ব্যবহারকারীর নাম লিখুন</string>
+    <string name="enter_email">ইমেইল লিখুন</string>
+    <string name="phone_number">ফোন নম্বর</string>
+    <string name="enter_phone_number">ফোন নম্বর লিখুন</string>
+    <string name="change_password">পাসওয়ার্ড পরিবর্তন করুন</string>
+    <string name="save_changes">পরিবর্তন সংরক্ষণ করুন</string>
+    <string name="clear_sky">স্পষ্ট আকাশ</string>
+    <string name="feels_like_16_c">মোটামুটি 16°C</string>
+    <string name="humidity">আর্দ্রতা</string>
+    <string name="_12_km_h">12 কিমি/ঘণ্টা</string>
+    <string name="wind">বাতাস</string>
+    <string name="clouds">মেঘ</string>
+    <string name="excellent_for_trip">✓ ভ্রমণের জন্য চমৎকার</string>
+    <string name="perfect_weather_for_monastery_visit_clear_skies_and_pleasant_temperature">মঠ দর্শনের জন্য উপযুক্ত আবহাওয়া! স্পষ্ট আকাশ এবং মনোরম তাপমাত্রা।</string>
+    <string name="monastery_image">মঠের ছবি</string>
+    <string name="my_profile">আমার প্রোফাইল</string>
+    <string name="settings">সেটিংস</string>
+    <string name="user_name">ব্যবহারকারীর নাম</string>
+    <string name="user_email_com">user@email.com</string>
+    <string name="real_time_weather_for_all_monasteries">সকল মঠের জন্য রিয়েল-টাইম আবহাওয়া</string>
+    <string name="last_updated_loading">সর্বশেষ আপডেট: লোড হচ্ছে...</string>
+    <string name="calculating_distance">দূরত্ব হিসাব করা হচ্ছে...</string>
+    <string name="_455_review">(455 রিভিউ)</string>
+    <string name="tap_to_view_full_map">পূর্ণ মানচিত্র দেখতে ট্যাপ করুন</string>
+    <string name="your_current_location">আপনার বর্তমান অবস্থান</string>
+    <string name="tap_below_to_open_google_maps_with_your_current_location">আপনার বর্তমান অবস্থান সহ গুগল ম্যাপ খুলতে নিচে ট্যাপ করুন</string>
+    <string name="open_in_google_maps">গুগল ম্যাপে খুলুন</string>
+    <string name="location_features">অবস্থান বৈশিষ্ট্যসমূহ:</string>
+    <string name="check">পরীক্ষা করুন</string>
+    <string name="real_time_location_tracking">রিয়েল-টাইম অবস্থান ট্র্যাকিং</string>
+    <string name="satellite_view_available">স্যাটেলাইট ভিউ উপলব্ধ</string>
+    <string name="directions_to_monasteries">মঠগুলোর দিকে দিকনির্দেশনা</string>
+
+    <!-- Dubdi Monastery -->
+    <string name="dubdi_name">ডুবডি মঠ</string>
+    <string name="dubdi_location">ইউকসোম, পশ্চিম সিকিম</string>
+    <string name="dubdi_price">₹200/প্রতি ব্যক্তি</string>
+    <string name="dubdi_description">ডুবডি মঠ, ইউকসোম মঠ নামেও পরিচিত, সিকিমের অন্যতম প্রাচীন ও ঐতিহাসিকভাবে গুরুত্বপূর্ণ মঠ। এটি 1701 সালে চোগিয়াল নামগিয়াল দ্বারা প্রতিষ্ঠিত হয় এবং সিকিমের বৌদ্ধধর্মের উৎসের প্রতীক। শান্ত পাহাড়ের উপরে অবস্থিত মঠটি ঘন বন, কোমল পাহাড়ি বাতাস এবং প্রাকৃতিক সৌন্দর্যে ঘেরা।</string>
+    <string name="dubdi_altitude">2100 মিটার</string>
+    <string name="dubdi_sect">নিয়ংস্মা বৌদ্ধধর্ম</string>
+    <string name="dubdi_founded">1701</string>
+
+    <!-- Enchey Monastery -->
+    <string name="enchey_name">এনচে মঠ</string>
+    <string name="enchey_location">গ্যাংটক, সিকিম</string>
+    <string name="enchey_price">₹150/প্রতি ব্যক্তি</string>
+    <string name="enchey_description">এনচে মঠ, গ্যাংটকের উপরে একটি শান্ত পাহাড়ে অবস্থিত, সিকিমের অন্যতম গুরুত্বপূর্ণ ও আধ্যাত্মিকভাবে সম্মানিত মঠ। প্রায় 200 বছর আগে নির্মিত এবং পরে 1909 সালে সংস্কার করা, এটি নিয়ংস্মা বৌদ্ধধর্মের অংশ।</string>
+    <string name="enchey_altitude">1850 মিটার</string>
+    <string name="enchey_sect">নিয়ংস্মা বৌদ্ধধর্ম</string>
+    <string name="enchey_founded">1840</string>
+
+    <!-- Gonjang Monastery -->
+    <string name="gonjang_name">গঞ্জাং মঠ</string>
+    <string name="gonjang_location">তাশি ভিউ পয়েন্টের কাছে, গ্যাংটক</string>
+    <string name="gonjang_price">₹150/প্রতি ব্যক্তি</string>
+    <string name="gonjang_description">গঞ্জাং মঠ একটি তুলনামূলক আধুনিক কিন্তু গুরুত্বপূর্ণ মঠ, যা তাশি ভিউ পয়েন্টের কাছে অবস্থিত। এটি 1981 সালে প্রতিষ্ঠিত হয় এবং নিয়ংস্মা বৌদ্ধধর্মের সঙ্গে সংযুক্ত।</string>
+    <string name="gonjang_altitude">2,050 মি (6,725 ফিট) আনুমানিক</string>
+    <string name="gonjang_sect">নিয়ংস্মা</string>
+    <string name="gonjang_founded">1981</string>
+
+    <!-- Kewzing Monastery -->
+    <string name="kewzing_name">কিউজিং মঠ</string>
+    <string name="kewzing_location">কিউজিং গ্রাম, দক্ষিণ সিকিম</string>
+    <string name="kewzing_price">মুক্ত</string>
+    <string name="kewzing_description">কিউজিং মঠ, দক্ষিণ সিকিমের শান্তিপূর্ণ গ্রামে অবস্থিত, নিয়ংস্মা বৌদ্ধধর্মের একটি গুরুত্বপূর্ণ মঠ। এটি 1888 সালে প্রতিষ্ঠিত।</string>
+    <string name="kewzing_altitude">1,550 মি (5,085 ফিট) আনুমানিক</string>
+    <string name="kewzing_sect">নিয়ংস্মা</string>
+    <string name="kewzing_founded">1888</string>
+
+    <!-- Labrang Monastery -->
+    <string name="labrang_name">ল্যাবরাং মঠ</string>
+    <string name="labrang_location">ফোডং, উত্তর সিকিম হাইওয়ে সংলগ্ন</string>
+    <string name="labrang_price">মুক্ত</string>
+    <string name="labrang_description">ল্যাবরাং মঠ ফোডংয়ের কাছে অবস্থিত, 1814 সালে প্রতিষ্ঠিত। এটি নিয়ংস্মা বৌদ্ধধর্মের একটি গুরুত্বপূর্ণ মঠ। শান্তিপূর্ণ পরিবেশ এবং ঐতিহ্যবাহী তিব্বতি স্থাপত্যের কারণে এটি আধ্যাত্মিক চর্চার জন্য উপযুক্ত।</string>
+    <string name="labrang_altitude">1,700 মি (5,577 ফিট) আনুমানিক</string>
+    <string name="labrang_sect">নিয়ংস্মা</string>
+    <string name="labrang_founded">1814</string>
+
+    <!-- Phodong Monastery -->
+    <string name="phodong_name">ফোডং মঠ</string>
+    <string name="phodong_location">ফোডং, উত্তর সিকিম হাইওয়ে</string>
+    <string name="phodong_price">মুক্ত</string>
+    <string name="phodong_description">ফোডং মঠ সিকিমের ছয়টি গুরুত্বপূর্ণ মঠের মধ্যে একটি, প্রাক্তন রাজধানী তুমলঙের কাছাকাছি হওয়ার কারণে ঐতিহাসিকভাবে গুরুত্বপূর্ণ। এটি কাগ্যু সম্প্রদায়ের প্রধান মঠ, যা 1740 সালে চোগিয়াল জিউরমেদ নামগিয়াল দ্বারা প্রতিষ্ঠিত হয়। মঠে ২৬০ জনেরও বেশি ভিক্ষু রয়েছে এবং এটি উত্তর সিকিমে বৌদ্ধ শিক্ষার একটি গুরুত্বপূর্ণ কেন্দ্র। ডিসেম্বর মাসে বার্ষিক কাগ্যেদ চাম মুখোশ নৃত্য উৎসব অনুষ্ঠিত হয়।</string>
+    <string name="phodong_altitude">1,500 মি (4,920 ফিট) আনুমানিক</string>
+    <string name="phodong_sect">কাগ্যু</string>
+    <string name="phodong_founded">1740</string>
+
+    <!-- Rinchenpong Monastery -->
+    <string name="rinchenpong_name">রিনচেনপং মঠ</string>
+    <string name="rinchenpong_location">রিনচেনপং, পশ্চিম সিকিম</string>
+    <string name="rinchenpong_price">মুক্ত</string>
+    <string name="rinchenpong_description">রিনচেনপং মঠ পশ্চিম সিকিমের রিনচেনপং গ্রামের কাছে একটি ঐতিহাসিক ও শান্ত মঠ, খাঞ্জেনডজংগা পর্বতমালার চমৎকার দৃশ্য উপস্থাপন করে। 1730 সালে প্রতিষ্ঠিত, এটি তিব্বতি বৌদ্ধধর্মের কাগ্যু সম্প্রদায়ের অন্তর্ভুক্ত।</string>
+    <string name="rinchenpong_altitude">1,740 মি (5,709 ফিট) আনুমানিক</string>
+    <string name="rinchenpong_sect">কাগ্যু</string>
+    <string name="rinchenpong_founded">1730</string>
+
+    <!-- Rumtek Monastery -->
+    <string name="rumtek_name">রুমটেক মঠ</string>
+    <string name="rumtek_location">রুমটেক, গ্যাংটকের কাছে</string>
+    <string name="rumtek_price">মুক্ত</string>
+    <string name="rumtek_description">রুমটেক মঠ, আনুষ্ঠানিকভাবে ধর্মচক্র কেন্দ্র নামে পরিচিত, সিকিমের সবচেয়ে বড় এবং গুরুত্বপূর্ণ মঠ। এটি গ্যাংটক থেকে ২৪ কিমি দূরে অবস্থিত এবং ৯০০ বছর পুরনো কর্মা কাগ্যু বংশের প্রধান গ্যালওয়া কর্মাপার প্রধান আসন। মঠে মূল মন্দির, ভিক্ষু কোয়ার্টার, ধ্যানকেন্দ্র এবং উচ্চতর বৌদ্ধ অধ্যয়নের জন্য কর্মা শ্রী নালন্দা ইনস্টিটিউট অন্তর্ভুক্ত।</string>
+    <string name="rumtek_altitude">1,662 মি (5,450 ফিট)</string>
+    <string name="rumtek_sect">কাগ্যু</string>
+    <string name="rumtek_founded">1962</string>
+
+    <!-- Sangachoeling Monastery -->
+    <string name="sangachoeling_name">সাঙ্গাচোলিং মঠ</string>
+    <string name="sangachoeling_location">পেলিং, পশ্চিম সিকিম</string>
+    <string name="sangachoeling_price">মুক্ত</string>
+    <string name="sangachoeling_description">সাঙ্গাচোলিং মঠ, যাকে স্যাং চোলিংও বলা হয়, সিকিমের দ্বিতীয় প্রাচীনতম মঠ হিসেবে বিবেচিত। এটি 1697 সালে প্রতিষ্ঠিত হয় এবং বজ্রযান বৌদ্ধধর্মের "গুহ্যমন্ত্র শিক্ষা দ্বীপ" বা "গোপন মন্ত্রের স্থান" হিসেবে পরিচিত।</string>
+    <string name="sangachoeling_altitude">2,100 মি (6,890 ফিট) আনুমানিক</string>
+    <string name="sangachoeling_sect">নিয়ংস্মা</string>
+    <string name="sangachoeling_founded">1697</string>
+
+    <!-- Tashiding Monastery -->
+    <string name="tashiding_name">তাশিদিং মঠ</string>
+    <string name="tashiding_location">তাশিদিং গ্রাম, পশ্চিম সিকিম</string>
+    <string name="tashiding_price">মুক্ত</string>
+    <string name="tashiding_description">তাশিদিং মঠ, "দ্য ডেডিকেটেড সেন্ট্রাল গ্লোরি" নামে পরিচিত, সিকিমের সবচেয়ে পবিত্র মঠ হিসেবে গণ্য। এটি হৃদয়াকৃতি পাহাড়ের উপরে অবস্থিত এবং ৮ম শতকে গুরু পদ্মসম্ভব দ্বারা পবিত্র করা হয়। মঠটি 1641 সালে নাগদাক সেম্পা চেম্পো দ্বারা প্রতিষ্ঠিত হয়।</string>
+    <string name="tashiding_altitude">1,465 মি (4,800 ফিট) আনুমানিক</string>
+    <string name="tashiding_sect">নিয়ংস্মা</string>
+    <string name="tashiding_founded">1641</string>
+
+    <!-- Audio & UI Strings -->
+    <string name="audio_welcome">স্বাগতম</string>
+    <string name="audio_located">অবস্থান</string>
+    <string name="audio_address">ঠিকানা</string>
+    <string name="camera">ক্যামেরা</string>
+    <string name="captured_image">ধরা ছবি</string>
+    <string name="monastery_scanner">মঠ স্ক্যানার</string>
+    <string name="click_button_below_to_capture_monastery_photo">📸 মঠের ছবি তুলতে নিচের বোতামে ক্লিক করুন</string>
+    <string name="capture_photo">📷 ছবি তুলুন</string>
+    <string name="plan_your_trip">আপনার ভ্রমণ পরিকল্পনা করুন</string>
+    <string name="where_do_you_want_to_explore">📍 আপনি কোথায় ঘুরতে চান?</string>
+    <string name="how_many_days">⏰ কত দিন?</string>
+    <string name="who_are_you_traveling_with">👥 আপনি কার সঙ্গে ভ্রমণ করছেন?</string>
+    <string name="solo">একাই</string>
+    <string name="couple">দম্পতি</string>
+    <string name="family">পরিবার</string>
+    <string name="what_interests_you">❤️ আপনার আগ্রহের বিষয়?</string>
+    <string name="cultural">সাংস্কৃতিক</string>
+    <string name="adventure">অ্যাডভেঞ্চার</string>
+    <string name="nature">প্রকৃতি</string>
+    <string name="photography">ফটোগ্রাফি</string>
+    <string name="any_special_requests">💬 কোনো বিশেষ অনুরোধ?</string>
+    <string name="tell_us_about_your_preferences">আপনার পছন্দ সম্পর্কে জানান...</string>
+    <string name="plan_my_trip">✨ আমার ভ্রমণ পরিকল্পনা করুন</string>
+
+</resources>

@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class EditProfileActivity : AppCompatActivity() {
+class EditProfileActivity : BaseActivity() {
 
     private lateinit var backButton: ImageView
     private lateinit var firstNameEdit: EditText

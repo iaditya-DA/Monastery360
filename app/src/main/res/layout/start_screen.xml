@@ -21,7 +21,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"> <!-- adjust marginTop as needed -->
+        android:layout_marginTop="80dp">
 
         <TextView
             android:id="@+id/title"
@@ -44,8 +44,9 @@
             android:gravity="center" />
     </LinearLayout>
 
-    <!-- Bottom Go Button -->
+    <!-- Bottom Go Button Container -->
     <LinearLayout
+        android:id="@+id/btnGoContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -55,11 +56,14 @@
         android:layout_marginBottom="40dp">
 
         <LinearLayout
+            android:id="@+id/btnGo"
             android:layout_width="100dp"
             android:layout_height="130dp"
             android:gravity="top|center_horizontal"
             android:orientation="vertical"
-            android:background="@drawable/rounded_fade">
+            android:background="@drawable/rounded_fade"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="28dp"
@@ -69,7 +73,6 @@
                 android:layout_marginTop="6dp" />
 
             <LinearLayout
-                android:id="@+id/btnGo"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="4dp"

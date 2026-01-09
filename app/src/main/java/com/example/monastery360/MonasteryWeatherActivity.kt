@@ -19,7 +19,7 @@ import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MonasteryWeatherActivity : AppCompatActivity() {
+class MonasteryWeatherActivity : BaseActivity() {
 
     private lateinit var btnBack: ImageView
     private lateinit var txtTitle: TextView

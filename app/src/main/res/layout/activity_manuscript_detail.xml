@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF8EE"
+    android:fillViewport="true"
+    tools:context=".ManuscriptDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:contentDescription="@string/back_button"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="#333333" />
+
+        <!-- Manuscript Image using CardView for rounded corners -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <ImageView
+                android:id="@+id/imgManuscript"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/bg1" />
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Ancient Scroll of Wisdom" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="#5D5D5D"
+            android:textSize="16sp"
+            tools:text="This is a detailed description of the manuscript. It contains ancient texts and historical information that spans across several centuries." />
+
+        <!--
+            BUTTONS WALA SECTION YAHAAN SE HATA DIYA GAYA HAI
+            - Main Manuscript Actions Button (Removed)
+            - Expandable Options Container (Removed)
+        -->
+
+    </LinearLayout>
+
+</ScrollView>

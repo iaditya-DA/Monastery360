@@ -2,6 +2,25 @@
 <resources>
     <string name="app_name">Monastery 360</string>
 
+    <!-- Profile Menu -->
+    <string name="menu_favourites">Favourites</string>
+    <string name="menu_languages">Languages</string>
+    <string name="menu_location">Location</string>
+    <string name="menu_clear_cache">Clear Cache</string>
+    <string name="menu_clear_history">Clear History</string>
+    <string name="menu_logout">Log Out</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_clear_cache">Clear Cache</string>
+    <string name="dialog_clear_history">Clear History</string>
+    <string name="dialog_logout">Log Out</string>
+    <string name="dialog_are_you_sure">Are you sure?</string>
+    <string name="dialog_logout_confirm">Are you sure you want to logout?</string>
+    <string name="dialog_cache_cleared">Cache cleared</string>
+    <string name="dialog_history_cleared">History cleared</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+
     <!-- Language Selection -->
     <string name="select_language">Select Language</string>
     <string name="english">English</string>
@@ -53,10 +72,10 @@
     <!-- What We Offer Section -->
     <string name="virtual_tours">Virtual Tours</string>
     <string name="virtual_tours_desc">Explore destinations through immersive 360° views</string>
-    <string name="local_guides">Local Guides</string>
+    <string name="local_guides">Plan my trip</string>
     <string name="local_guides_desc">Connect with experienced local guides</string>
-    <string name="travel_tips">Travel Tips</string>
-    <string name="travel_tips_desc">Get insider tips and recommendations</string>
+    <string name="travel_tips">Explore</string>
+    <string name="travel_tips_desc">Move through sikkim smoothly</string>
     <string name="weather_updates">Weather Updates</string>
     <string name="weather_updates_desc">Real-time weather information for planning</string>
 
@@ -104,5 +123,180 @@
     <string name="directions">Directions</string>
     <string name="no_favorites_yet">No Fav yet\n</string>
     <string name="my_favorites">My Favorite\n</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="first_name">First Name</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="username">Username</string>
+    <string name="enter_username">Enter username</string>
+    <string name="enter_email">Enter email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="change_password">Change Password</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="clear_sky">Clear sky</string>
+    <string name="feels_like_16_c">Feels like 16°C</string>
+    <string name="humidity">Humidity</string>
+    <string name="_12_km_h">12 km/h</string>
+    <string name="wind">Wind</string>
+    <string name="clouds">Clouds</string>
+    <string name="excellent_for_trip">✓ Excellent for Trip</string>
+    <string name="perfect_weather_for_monastery_visit_clear_skies_and_pleasant_temperature">Perfect weather for monastery visit! Clear skies and pleasant temperature.</string>
+    <string name="monastery_image">Monastery Image</string>
+    <string name="my_profile">My Profile</string>
+    <string name="settings">Settings</string>
+    <string name="user_name">User Name</string>
+    <string name="user_email_com">user@email.com</string>
+    <string name="real_time_weather_for_all_monasteries">Real-time weather for all monasteries</string>
+    <string name="last_updated_loading">Last updated: Loading...</string>
+    <string name="calculating_distance">Calculating distance...</string>
+    <string name="_455_review">(455 Review)</string>
+    <string name="tap_to_view_full_map">Tap to view full map</string>
+    <string name="your_current_location">Your Current Location</string>
+    <string name="tap_below_to_open_google_maps_with_your_current_location">Tap below to open Google Maps with your current location</string>
+    <string name="open_in_google_maps">Open in Google Maps</string>
+    <string name="location_features">Location Features:</string>
+    <string name="check">Check</string>
+    <string name="real_time_location_tracking">Real-time location tracking</string>
+    <string name="satellite_view_available">Satellite view available</string>
+    <string name="directions_to_monasteries">Directions to monasteries</string>
+    
+
+
+
+        <!-- Dubdi Monastery -->
+        <string name="dubdi_name">Dubdi Monastery</string>
+        <string name="dubdi_location">Yuksom, West Sikkim</string>
+        <string name="dubdi_price">₹200/person</string>
+        <string name="dubdi_description">Dubdi Monastery, also known as Yuksom Monastery, is one of the oldest and most historically significant monasteries in Sikkim. Established in 1701 by Chogyal Namgyal, the first king of Sikkim, it stands as a symbol of the origins of Sikkimese Buddhism. Located on a quiet hilltop above Yuksom, the monastery is surrounded by dense forests, soft mountain breeze, and peaceful natural beauty. Built in traditional Tibetan style, it features whitewashed walls, a tiered golden bell-shaped roof, ancient manuscripts, and beautifully preserved statues of Buddhist deities. The walk to the monastery itself is scenic and calming, passing through forest trails and serene landscapes. Known as the "Hermit\'s Cell," Dubdi Monastery played a key role in the coronation of the first Sikkimese king and is deeply tied to the spiritual history of the region. Today, it is admired for its tranquility, heritage value, and its timeless atmosphere that lets visitors experience the early roots of Buddhism in Sikkim.</string>
+        <string name="dubdi_altitude">2100 meters</string>
+        <string name="dubdi_sect">Nyingma Buddhism</string>
+        <string name="dubdi_founded">1701</string>
+
+        <!-- Enchey Monastery -->
+        <string name="enchey_name">Enchey Monastery</string>
+        <string name="enchey_location">Gangtok, Sikkim</string>
+        <string name="enchey_price">₹150/person</string>
+        <string name="enchey_description">Enchey Monastery, located on a quiet hill above Gangtok, is one of Sikkim\'s most important and spiritually revered monasteries. Built over 200 years ago and later renovated in 1909, it belongs to the Nyingma sect of Tibetan Buddhism. The name "Enchey" means "the solitary temple," reflecting its peaceful and secluded setting surrounded by pine trees and panoramic views of the Kanchenjunga range. According to local belief, the monastery stands on a blessed site consecrated by the famous tantric master Lama Drupthob Karpo, known for his flying powers. Architecturally, Enchey showcases traditional Bhutanese-style design with vibrant colours, carved windows, and a sacred prayer hall with statues of Guru Padmasambhava, Lokeshwara, and Buddha. The monastery is also famous for the annual Cham Dance (mask dance) performed by monks during Losoong and Pang Lhabsol festivals. Calm, historic, and spiritually rich, Enchey Monastery offers a perfect blend of culture, faith, and Himalayan serenity.</string>
+        <string name="enchey_altitude">1850 meters</string>
+        <string name="enchey_sect">Nyingma Buddhism</string>
+        <string name="enchey_founded">1840</string>
+
+        <!-- Gonjang Monastery -->
+        <string name="gonjang_name">Gonjang Monastery</string>
+        <string name="gonjang_location">Near Tashi View Point, Gangtok</string>
+        <string name="gonjang_price">₹150/person</string>
+        <string name="gonjang_description">Gonjang Monastery is a relatively modern but significant monastery located near the famous Tashi View Point, just a short drive from Gangtok. It was established in 1981 A.D. by H.E. Tingkye Gonjang Rimpoche, and belongs to the Nyingma sect, maintaining a strong connection to the lineage of the 4th Gonjang Rimpoche. Despite its recent founding, it has quickly become a vital centre for the local Buddhist community and a popular stop for tourists visiting the Tashi View Point. The monastery is beautifully constructed with vibrant colors and traditional Tibetan architectural elements. The main assembly hall is spacious and decorated with murals depicting scenes from Buddhist scriptures and the lives of past masters. It houses magnificent statues of Guru Padmasambhava, Lord Buddha, and other deities important to the Nyingma tradition. One of the greatest appeals of Gonjang Monastery is its elevated location, which offers panoramic, breathtaking views of the surrounding Himalayan peaks, including Mount Khangchendzonga.</string>
+        <string name="gonjang_altitude">2,050m (6,725 ft) approx.</string>
+        <string name="gonjang_sect">Nyingma</string>
+        <string name="gonjang_founded">1981</string>
+
+        <!-- Kewzing Monastery -->
+        <string name="kewzing_name">Kewzing Monastery</string>
+        <string name="kewzing_location">Kewzing Village, South Sikkim</string>
+        <string name="kewzing_price">Free</string>
+        <string name="kewzing_description">Kewzing Monastery, located in the quiet, scenic Kewzing village in South Sikkim, is a charming and historically significant monastery belonging to the Nyingma sect of Buddhism. It was established in 1888 A.D. and stands as a testament to the strong Buddhist traditions maintained by the local Lepcha and Bhutia communities in the area. The name \'Kewzing\' itself is derived from the local Lepcha dialect, meaning \'land of the wheat field.\' The monastery complex features traditional Sikkimese and Tibetan architecture, characterized by a sloping roof, intricate woodwork, and a main assembly hall (Lhakhang) adorned with vibrant frescoes and religious iconography. Inside the Lhakhang, visitors can observe ancient Thangkas and statues of Guru Padmasambhava. Kewzing Monastery is known for its peaceful atmosphere and serves as a key spiritual centre for the surrounding villages.</string>
+        <string name="kewzing_altitude">1,550m (5,085 ft) approx.</string>
+        <string name="kewzing_sect">Nyingma</string>
+        <string name="kewzing_founded">1888</string>
+
+        <!-- Labrang Monastery -->
+        <string name="labrang_name">Labrang Monastery</string>
+        <string name="labrang_location">Near Phodong, North Sikkim Highway</string>
+        <string name="labrang_price">Free</string>
+        <string name="labrang_description">Labrang Monastery is a significant religious site located near Phodong, just off the North Sikkim Highway. Established in 1814 A.D., it belongs to the Nyingma sect, setting it apart from the nearby Phodong Monastery, which follows the Kagyu sect. This unique coexistence of Nyingma and Kagyu monasteries in close proximity reflects the region\'s history of religious harmony and cultural depth. The monastery was built by the eighth Chogyal of Sikkim, Tsugphud Namgyal, in memory of his tutor Lama Jamyang Tashi. Known for its peaceful setting and traditional Tibetan architecture, the monastery features intricate woodwork, vibrant murals, and beautifully painted frescoes. Its calm surroundings and forested hillside location make it an ideal place for spiritual retreat and meditation.</string>
+        <string name="labrang_altitude">1,700m (5,577 ft) approx.</string>
+        <string name="labrang_sect">Nyingma</string>
+        <string name="labrang_founded">1814</string>
+
+        <!-- Phodong Monastery -->
+        <string name="phodong_name">Phodong Monastery</string>
+        <string name="phodong_location">Phodong, North Sikkim Highway</string>
+        <string name="phodong_price">Free</string>
+        <string name="phodong_description">Phodong Monastery is one of the six most important monasteries in Sikkim, historically significant for its proximity to the former capital, Tumlong. It is a major monastery of the Kagyu sect, established by Chogyal Gyurmed Namgyal in 1740 A.D. The original structure remains an important religious landmark, with the main complex rebuilt in the early 20th century to accommodate a growing community. Renowned for splendid murals, exquisite frescoes, and ancient wall paintings, Phodong houses over 260 monks and serves as a major center for Buddhist learning in North Sikkim. It hosts the annual Kagyed Chaam masked dance festival in December, featuring monks in silk costumes and masks performing ritual dances symbolizing the destruction of evil forces and welcoming prosperity.</string>
+        <string name="phodong_altitude">1,500m (4,920 ft) approx.</string>
+        <string name="phodong_sect">Kagyu</string>
+        <string name="phodong_founded">1740</string>
+
+        <!-- Rinchenpong Monastery -->
+        <string name="rinchenpong_name">Rinchenpong Monastery</string>
+        <string name="rinchenpong_location">Rinchenpong, West Sikkim</string>
+        <string name="rinchenpong_price">Free</string>
+        <string name="rinchenpong_description">Rinchenpong Monastery is a historic and serene monastery located near the village of Rinchenpong in West Sikkim, offering stunning views of the Khangchendzonga range. Founded in 1730 A.D., it belongs to the Kagyu order of Tibetan Buddhism. The monastery is relatively small but holds significant historical importance due to its connection with the early spread of Buddhism in the region. It is famously known for its sacred statue of Lord Buddha and its association with a local legend involving the British. The monastery hosts an annual festival with traditional Chaam masked dances performed by the monks.</string>
+        <string name="rinchenpong_altitude">1,740m (5,709 ft) approx.</string>
+        <string name="rinchenpong_sect">Kagyu</string>
+        <string name="rinchenpong_founded">1730</string>
+
+        <!-- Rumtek Monastery -->
+        <string name="rumtek_name">Rumtek Monastery</string>
+        <string name="rumtek_location">Rumtek, near Gangtok</string>
+        <string name="rumtek_price">Free</string>
+        <string name="rumtek_description">Rumtek Monastery, officially the Dharma Chakra Centre, is the largest and most important monastery in Sikkim. Located 24 km from Gangtok on a ridge overlooking the valley, it serves as the main seat-in-exile of the Gyalwa Karmapa, head of the 900-year-old Karma Kagyu lineage. Originally founded in 1734 by the 9th Karmapa, the monastery fell into ruin until the 1960s when the 16th Karmapa built the current complex after fleeing Tibet. It is a replica of the Tsurphu Monastery in Tibet and includes the main temple, monks\' quarters, a retreat center, and the Karma Shri Nalanda Institute for Higher Buddhist Studies. The main shrine is a three-story structure adorned with murals, thangkas, and ancient manuscripts.</string>
+        <string name="rumtek_altitude">1,662m (5,450 ft)</string>
+        <string name="rumtek_sect">Kagyu</string>
+        <string name="rumtek_founded">1962</string>
+
+        <!-- Sangachoeling Monastery -->
+        <string name="sangachoeling_name">Sangachoeling Monastery</string>
+        <string name="sangachoeling_location">Pelling, West Sikkim</string>
+        <string name="sangachoeling_price">Free</string>
+        <string name="sangachoeling_description">Sangachoeling Monastery, also spelled Sange Choeling, is considered the second oldest monastery in Sikkim, founded in 1697 A.D. The name means "Island of the Guhyamantra teachings" or "Place of Secret Spells," referring to Vajrayana Buddhism. Established by Lama Lhatsun Chempo, who also founded Pemayangtse Monastery, it is located near Pelling. The monastery requires a scenic uphill hike through forest, culminating in a tranquil site with panoramic views of the Himalayan ranges including Mount Kanchenjunga. Despite multiple reconstructions due to fire, Sangachoeling preserves unique 17th-century clay statues and tantric relics.</string>
+        <string name="sangachoeling_altitude">2,100m (6,890 ft) approx.</string>
+        <string name="sangachoeling_sect">Nyingma</string>
+        <string name="sangachoeling_founded">1697</string>
+
+        <!-- Tashiding Monastery -->
+        <string name="tashiding_name">Tashiding Monastery</string>
+        <string name="tashiding_location">Tashiding Village, West Sikkim</string>
+        <string name="tashiding_price">Free</string>
+        <string name="tashiding_description">Tashiding Monastery, known as \'The Devoted Central Glory,\' is considered the most sacred monastery in Sikkim and is revered as the \'Heart of Sikkim.\' Located atop a heart-shaped hill at the confluence of the Rathong and Rangit rivers, it is sanctified by Guru Padmasambhava who blessed the site in the 8th century. Founded in 1641 A.D. by Ngadak Sempa Chempo, one of the three lamas who consecrated Sikkim\'s first Chogyal, Tashiding is a key monastery of the Nyingma order. The monastery complex includes numerous stupas and chortens, with the famous Thongwa Rangdrol chorten believed to cleanse sins by mere sight.</string>
+        <string name="tashiding_altitude">1,465m (4,800 ft) approx.</string>
+        <string name="tashiding_sect">Nyingma</string>
+        <string name="tashiding_founded">1641</string>
+    <string name="audio_welcome">Welcome to</string>
+    <string name="audio_located">Located in</string>
+    <string name="audio_address">Address</string>
+    <string name="camera">camera</string>
+    <string name="captured_image">captaured image</string>
+    <string name="monastery_scanner">Monastery Scanner</string>
+    <string name="click_button_below_to_capture_monastery_photo">📸 Click button below to capture monastery photo</string>
+    <string name="capture_photo">📷 Capture Photo</string>
+    <string name="plan_your_trip">Plan Your Trip</string>
+    <string name="where_do_you_want_to_explore">📍 Where do you want to explore?</string>
+    <string name="how_many_days">⏰ How many days?</string>
+    <string name="who_are_you_traveling_with">👥 Who are you traveling with?</string>
+    <string name="solo">Solo</string>
+    <string name="couple">Couple</string>
+    <string name="family">Family</string>
+    <string name="what_interests_you">❤️ What interests you?</string>
+    <string name="cultural">Cultural</string>
+    <string name="adventure">Adventure</string>
+    <string name="nature">Nature</string>
+    <string name="photography">Photography</string>
+    <string name="any_special_requests">💬 Any special requests?</string>
+    <string name="tell_us_about_your_preferences">Tell us about your preferences...</string>
+    <string name="plan_my_trip">✨ Plan My Trip</string>
+    <string name="bengali">বাংলা</string>
+    <string name="coming_soon_image">Coming Soon Image</string>
+    <string name="we_are_working_on_this_feature">We are working on this feature!</string>
+    <string name="this_feature_will_arrive_in_the_next_version_of_the_sih_build">This feature will arrive in the next version of the SIH Build.</string>
+    <string name="close" />
+    <string name="gallery">gallery</string>
+    <string name="camera_preview">camera preview\n</string>
+    <string name="flash" />
+    <string name="manuscript_icon">manuscript icon\n</string>
+    <string name="expand_icon">expand icon</string>
+    <string name="upload_icon">upload icon</string>
+    <string name="arrow_icon">arrow icon</string>
+    <string name="transcribe_icon">transcribe icon</string>
+    <string name="manuscript_image" />
+    <string name="back_button" />
+    <string name="transcribe_manuscript">transcribe manuscript\n</string>
+    <string name="upload_manuscript">upload manuscript\n</string>
+    <string name="upload_or_transcribe">upload or transcribe\n</string>
+    <string name="manuscript_actions">manuscript actions</string>
+    <string name="manuscripts_available">%s Manuscripts Available</string>
 
 </resources>
+

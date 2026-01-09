@@ -12,7 +12,6 @@ import androidx.cardview.widget.CardView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.monastery360.adapter.ImageSliderAdapter
 import com.example.monastery360.repository.MonasteryRepository
-
 import java.util.*
 
 class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
@@ -83,7 +82,17 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
-            val result = textToSpeech?.setLanguage(Locale.US)
+            // ✅ Get current app language
+            val currentLanguage = resources.configuration.locale.language
+
+            val locale = when (currentLanguage) {
+                "hi" -> Locale("hi", "IN")      // Hindi
+                "ne" -> Locale("ne", "NP")      // Nepali
+                else -> Locale.US               // English (default)
+            }
+
+            // ✅ Set language to TextToSpeech
+            val result = textToSpeech?.setLanguage(locale)
 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Toast.makeText(this, "Language not supported", Toast.LENGTH_SHORT).show()
@@ -156,17 +165,14 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
         // Map Section
         mapCardView = findViewById(R.id.mapCardView)
 
-        btnBookVisit = findViewById(R.id.btnBookVisit)
+        btnBookVisit = findViewById(R.id.btnViewManuscript)
     }
 
     private fun loadMonasteryData() {
-        // Get monastery name from intent
         val monasteryNameIntent = intent.getStringExtra("MONASTERY_NAME") ?: return
 
-        // Find the monastery from repository
         val monastery = MonasteryRepository.getAllMonasteries()
             .find { it.name == monasteryNameIntent } ?: return
-
 
         val imageList = monastery.images
 
@@ -177,40 +183,52 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
 
         viewPagerImages.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-              super.onPageSelected(position)
+                super.onPageSelected(position)
                 txtImageCounter.text = "${position + 1}/${imageList.size}"
             }
         })
 
+        // ✅ Get translated strings
+        val translatedName = getTranslatedMonasteryName(monastery.name)
+        val translatedDesc = getTranslatedMonasteryDescription(monastery.name)
+        val translatedLocation = getTranslatedMonasteryLocation(monastery.name)
+        val translatedPrice = getTranslatedMonasteryPrice(monastery.name)
 
-
-    // Set monastery data
+        // Set monastery data with translations
         monasteryName = monastery.name
-        txtMonasteryName.text = monastery.name
+        txtMonasteryName.text = translatedName
         txtRating.text = monastery.rating.toString()
         txtReviews.text = "(${monastery.reviews} Review)"
-        txtLocation.text = monastery.location
+        txtLocation.text = translatedLocation
         txtAddress.text = monastery.address
-        txtDescription.text = monastery.description
-        txtPrice.text = monastery.price
+        txtDescription.text = translatedDesc
+        txtPrice.text = translatedPrice
 
         // Store location coordinates
         latitude = monastery.latitude
         longitude = monastery.longitude
 
-        // Prepare audio text
+        // Prepare audio text with translated content
+        // Prepare audio text with translated content
         audioText = buildString {
-            append("Welcome to ${monastery.name}. ")
-            append("Located in ${monastery.location}. ")
-            append("Address: ${monastery.address}. ")
-            append(monastery.description)
+            append("${getString(R.string.audio_welcome)} $translatedName. ")
+            append("${getString(R.string.audio_located)} $translatedLocation. ")
+            append("${getString(R.string.audio_address)}: ${monastery.address}. ")
+            append(translatedDesc)
         }
 
         // Calculate estimated duration
         val wordCount = audioText.split("\\s+".toRegex()).size
         estimatedDuration = (wordCount * 60) / 150
 
-        txtAudioDuration.text = "${formatTime(estimatedDuration * 1000)} • English"
+        // ✅ Language based text
+        val audioLanguage = when (resources.configuration.locale.language) {
+            "hi" -> "हिंदी"
+            "ne" -> "नेपाली"
+            else -> "English"
+        }
+
+        txtAudioDuration.text = "${formatTime(estimatedDuration * 1000)} • $audioLanguage"
         txtTotalTime.text = formatTime(estimatedDuration * 1000)
         seekBarAudio.max = estimatedDuration
     }
@@ -237,7 +255,6 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
             Toast.makeText(this, "Share clicked", Toast.LENGTH_SHORT).show()
         }
 
-        // ✅ Map Click Listener - Opens Full Screen Map Activity
         mapCardView.setOnClickListener {
             openFullScreenMap()
         }
@@ -279,11 +296,17 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
         }
 
         btnBookVisit.setOnClickListener {
-            Toast.makeText(this, "Book Visit clicked", Toast.LENGTH_SHORT).show()
+            // Open the manuscript list activity
+            val intent = Intent(this, ManuscriptListActivity::class.java)
+
+            // Optional: pass monastery name or ID if you want to filter manuscripts
+            intent.putExtra("MONASTERY_NAME", monasteryName)
+
+            startActivity(intent)
         }
+
     }
 
-    // ✅ Open Full Screen Map Activity
     private fun openFullScreenMap() {
         val intent = Intent(this, MonasteryMapsActivity::class.java)
         intent.putExtra("LATITUDE", latitude)
@@ -357,6 +380,74 @@ class MonasteryDetailActivity : BaseActivity(), TextToSpeech.OnInitListener {
         val minutes = (milliseconds / 1000) / 60
         val seconds = (milliseconds / 1000) % 60
         return String.format("%d:%02d", minutes, seconds)
+    }
+
+    // ✅ TRANSLATED MONASTERY NAMES
+    private fun getTranslatedMonasteryName(monasteryName: String): String {
+        return when (monasteryName) {
+            "Dubdi Monastery" -> getString(R.string.dubdi_name)
+            "Enchey Monastery" -> getString(R.string.enchey_name)
+            "Gonjang Monastery" -> getString(R.string.gonjang_name)
+            "Kewzing Monastery" -> getString(R.string.kewzing_name)
+            "Labrang Monastery" -> getString(R.string.labrang_name)
+            "Phodong Monastery" -> getString(R.string.phodong_name)
+            "Rinchenpong Monastery" -> getString(R.string.rinchenpong_name)
+            "Rumtek Monastery" -> getString(R.string.rumtek_name)
+            "Sangachoeling Monastery" -> getString(R.string.sangachoeling_name)
+            "Tashiding Monastery" -> getString(R.string.tashiding_name)
+            else -> monasteryName
+        }
+    }
+
+    // ✅ TRANSLATED MONASTERY DESCRIPTIONS
+    private fun getTranslatedMonasteryDescription(monasteryName: String): String {
+        return when (monasteryName) {
+            "Dubdi Monastery" -> getString(R.string.dubdi_description)
+            "Enchey Monastery" -> getString(R.string.enchey_description)
+            "Gonjang Monastery" -> getString(R.string.gonjang_description)
+            "Kewzing Monastery" -> getString(R.string.kewzing_description)
+            "Labrang Monastery" -> getString(R.string.labrang_description)
+            "Phodong Monastery" -> getString(R.string.phodong_description)
+            "Rinchenpong Monastery" -> getString(R.string.rinchenpong_description)
+            "Rumtek Monastery" -> getString(R.string.rumtek_description)
+            "Sangachoeling Monastery" -> getString(R.string.sangachoeling_description)
+            "Tashiding Monastery" -> getString(R.string.tashiding_description)
+            else -> "Description not available"
+        }
+    }
+
+    // ✅ TRANSLATED MONASTERY LOCATIONS
+    private fun getTranslatedMonasteryLocation(monasteryName: String): String {
+        return when (monasteryName) {
+            "Dubdi Monastery" -> getString(R.string.dubdi_location)
+            "Enchey Monastery" -> getString(R.string.enchey_location)
+            "Gonjang Monastery" -> getString(R.string.gonjang_location)
+            "Kewzing Monastery" -> getString(R.string.kewzing_location)
+            "Labrang Monastery" -> getString(R.string.labrang_location)
+            "Phodong Monastery" -> getString(R.string.phodong_location)
+            "Rinchenpong Monastery" -> getString(R.string.rinchenpong_location)
+            "Rumtek Monastery" -> getString(R.string.rumtek_location)
+            "Sangachoeling Monastery" -> getString(R.string.sangachoeling_location)
+            "Tashiding Monastery" -> getString(R.string.tashiding_location)
+            else -> "Location unknown"
+        }
+    }
+
+    // ✅ TRANSLATED MONASTERY PRICES
+    private fun getTranslatedMonasteryPrice(monasteryName: String): String {
+        return when (monasteryName) {
+            "Dubdi Monastery" -> getString(R.string.dubdi_price)
+            "Enchey Monastery" -> getString(R.string.enchey_price)
+            "Gonjang Monastery" -> getString(R.string.gonjang_price)
+            "Kewzing Monastery" -> getString(R.string.kewzing_price)
+            "Labrang Monastery" -> getString(R.string.labrang_price)
+            "Phodong Monastery" -> getString(R.string.phodong_price)
+            "Rinchenpong Monastery" -> getString(R.string.rinchenpong_price)
+            "Rumtek Monastery" -> getString(R.string.rumtek_price)
+            "Sangachoeling Monastery" -> getString(R.string.sangachoeling_price)
+            "Tashiding Monastery" -> getString(R.string.tashiding_price)
+            else -> "Price unknown"
+        }
     }
 
     override fun onDestroy() {

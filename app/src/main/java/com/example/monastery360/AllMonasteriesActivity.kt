@@ -25,12 +25,11 @@ class AllMonasteriesActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_monasteries)
 
-        // Location client ko initialize karein
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerAllMonasteries)
 
-        // Adapter ko class-level variable mein store karein
         monasteryAdapter = MonasteryAdapter(
             list = MonasteryRepository.getAllMonasteries(),
             isVertical = true,

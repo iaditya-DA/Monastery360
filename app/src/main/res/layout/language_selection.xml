@@ -31,7 +31,7 @@
         android:columnOrderPreserved="false"
         android:useDefaultMargins="false">
 
-        <!-- English Button -->
+        <!-- English Button (Row 0, Col 0) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btnEnglish"
             android:layout_width="0dp"
@@ -79,7 +79,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Hindi Button -->
+        <!-- Hindi Button (Row 0, Col 1) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btnHindi"
             android:layout_width="0dp"
@@ -125,13 +125,61 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Nepali Button -->
+        <!-- ✅ BENGALI BUTTON ADDED HERE (Row 1, Col 0) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnBengali"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#E91E63"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/tvBengali"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/bengali"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgBengali"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="-25dp"
+                    android:layout_marginBottom="-6dp"
+                    android:contentDescription="@string/bengali"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/bengali" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Nepali Button MOVED TO (Row 1, Col 1) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btnNepali"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_row="1"
-            android:layout_column="0"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:clickable="true"

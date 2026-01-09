@@ -45,7 +45,7 @@
                         android:id="@+id/txtWeatherMonasteryName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rumtek Monastery"
+                        android:text="@string/rumtek_monastery"
                         android:textSize="18sp"
                         android:textColor="#1A1A1A"
                         android:textStyle="bold" />
@@ -54,7 +54,7 @@
                         android:id="@+id/txtWeatherDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Clear sky"
+                        android:text="@string/clear_sky"
                         android:textSize="13sp"
                         android:textColor="#666666"
                         android:layout_marginTop="2dp" />
@@ -91,7 +91,7 @@
                     android:id="@+id/txtFeelsLike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Feels like 16°C"
+                    android:text="@string/feels_like_16_c"
                     android:textSize="13sp"
                     android:textColor="#666666"
                     android:layout_marginStart="12dp" />
@@ -140,7 +140,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Humidity"
+                        android:text="@string/humidity"
                         android:textSize="11sp"
                         android:textColor="#999999" />
 
@@ -164,7 +164,7 @@
                         android:id="@+id/txtWindSpeed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12 km/h"
+                        android:text="@string/_12_km_h"
                         android:textSize="16sp"
                         android:textColor="#1A1A1A"
                         android:textStyle="bold"
@@ -173,7 +173,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wind"
+                        android:text="@string/wind"
                         android:textSize="11sp"
                         android:textColor="#999999" />
 
@@ -206,7 +206,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Clouds"
+                        android:text="@string/clouds"
                         android:textSize="11sp"
                         android:textColor="#999999" />
 
@@ -227,7 +227,7 @@
                 android:id="@+id/txtTripStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="✓ Excellent for Trip"
+                android:text="@string/excellent_for_trip"
                 android:textSize="15sp"
                 android:textColor="#4CAF50"
                 android:textStyle="bold"
@@ -238,7 +238,7 @@
                 android:id="@+id/txtTripAdvice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Perfect weather for monastery visit! Clear skies and pleasant temperature."
+                android:text="@string/perfect_weather_for_monastery_visit_clear_skies_and_pleasant_temperature"
                 android:textSize="13sp"
                 android:textColor="#666666"
                 android:lineSpacingExtra="2dp"

@@ -79,7 +79,7 @@ interface DirectionsApiService {
     ): Call<DirectionsResponse>
 }
 
-class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpeech.OnInitListener {
+class MonasteryMapsActivity : BaseActivity(), OnMapReadyCallback, TextToSpeech.OnInitListener {
 
     private var googleMap: GoogleMap? = null
     private var latitude = 0.0
@@ -253,7 +253,10 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
-        googleMap?.mapType = GoogleMap.MAP_TYPE_NORMAL
+
+        // 1. CHANGE MAP TYPE: Use HYBRID for satellite imagery with road/place labels
+        googleMap?.mapType = GoogleMap.MAP_TYPE_HYBRID
+        // You could also use MAP_TYPE_SATELLITE if you don't want any labels
 
         val monasteryLatLng = LatLng(latitude, longitude)
 
@@ -265,7 +268,16 @@ class MonasteryMapsActivity : AppCompatActivity(), OnMapReadyCallback, TextToSpe
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
         )
 
-        googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(monasteryLatLng, 15f))
+        // 2. CREATE 3D CAMERA POSITION: Use CameraPosition.Builder to set tilt and bearing
+        val cameraPosition = CameraPosition.Builder()
+            .target(monasteryLatLng) // Center the camera on the location
+            .zoom(16f)               // A good zoom level for close-up aerial view
+            .bearing(45f)            // Optional: Rotate the map view (e.g., 45 degrees)
+            .tilt(60f)               // REQUIRED for 3D aerial view (60 degrees tilt)
+            .build()
+
+        // Move the camera using the new 3D position
+        googleMap?.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
 
         googleMap?.uiSettings?.apply {
             isZoomControlsEnabled = true

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "431071579062",
+    "project_id": "monastery360-92ee8",
+    "storage_bucket": "monastery360-92ee8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431071579062:android:bcf622199c61b608610f17",
+        "android_client_info": {
+          "package_name": "com.example.monastery360"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz_qA1lpS0jOSskcv6SoO82xtaWN2dRiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

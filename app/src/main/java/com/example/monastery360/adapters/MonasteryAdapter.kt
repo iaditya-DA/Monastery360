@@ -18,43 +18,30 @@ class MonasteryAdapter(
     private val onItemClick: (Monastery) -> Unit = {}
 ) : RecyclerView.Adapter<MonasteryAdapter.ViewHolder>() {
 
-    // Yeh map monastery ID aur uski doori (in KM) store karega
     private var distanceMap: Map<String, Float> = emptyMap()
 
-    /**
-     * MainActivity/Fragment se call karne ke liye function.
-     * Yeh user ki location lekar har monastery se doori calculate karta hai
-     * aur RecyclerView ko refresh kar deta hai.
-     */
     fun updateDistances(userLocation: Location) {
         val newDistanceMap = mutableMapOf<String, Float>()
-        val monasteryLocation = Location("Monastery") // Reusable Location object
+        val monasteryLocation = Location("Monastery")
 
         list.forEach { monastery ->
-            // Monastery ke Lat/Lng se ek Location object banayein
             monasteryLocation.latitude = monastery.latitude
             monasteryLocation.longitude = monastery.longitude
 
-            // User ki location se doori calculate karein (meters mein)
             val distanceInMeters = userLocation.distanceTo(monasteryLocation)
-
-            // Meters ko Kilometers mein convert karein
             val distanceInKm = distanceInMeters / 1000f
 
-            // Map mein store karein (monastery._id as key)
             newDistanceMap[monastery._id] = distanceInKm
         }
         this.distanceMap = newDistanceMap
-        // RecyclerView ko refresh karne ke liye notify karein
         notifyDataSetChanged()
     }
-
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val img: ImageView = itemView.findViewById(R.id.imgMonastery)
         val name: TextView = itemView.findViewById(R.id.txtName)
         val distance: TextView = itemView.findViewById(R.id.txtDistance)
-        val favIcon: ImageView = itemView.findViewById(R.id.favIcon)   // ❤️
+        val favIcon: ImageView = itemView.findViewById(R.id.favIcon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -67,7 +54,6 @@ class MonasteryAdapter(
         val view = LayoutInflater.from(parent.context)
             .inflate(layoutId, parent, false)
 
-        // Horizontal card width adjust
         if (!isVertical) {
             val displayMetrics = parent.context.resources.displayMetrics
             val screenWidth = displayMetrics.widthPixels
@@ -80,18 +66,16 @@ class MonasteryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val monastery = list[position]
-        val monasteryName = monastery.name // Monastery ka naam store karo
+        val monasteryName = monastery.name
 
-        // 🔥 Image Load Logic (supports BOTH drawable & URL)
+        // 🔥 Image Load Logic
         if (monastery.imageRes != 0) {
-            // Load drawable
             Glide.with(holder.itemView.context)
                 .load(monastery.imageRes)
                 .centerCrop()
                 .placeholder(R.drawable.ic_placeholder)
                 .into(holder.img)
         } else if (monastery.images.isNotEmpty()) {
-            // Load first URL from Cloudinary
             Glide.with(holder.itemView.context)
                 .load(monastery.images[0])
                 .centerCrop()
@@ -99,44 +83,38 @@ class MonasteryAdapter(
                 .error(R.drawable.ic_placeholder)
                 .into(holder.img)
         } else {
-            // Default image if nothing found
             holder.img.setImageResource(R.drawable.ic_placeholder)
         }
 
-        // ---== TEXT AND DISTANCE LOGIC ==---
-        holder.name.text = monasteryName
+        // ✅ TRANSLATED MONASTERY NAME
+        val translatedName = getTranslatedMonasteryName(holder.itemView.context, monasteryName)
+        holder.name.text = translatedName
 
-        // Distance ko map se nikal kar format karein (monastery ke _id se)
+        // Distance Logic
         val distanceInKm = distanceMap[monastery._id]
         if (distanceInKm != null && distanceInKm > 0) {
-            // Doori ko format karein (e.g., "12.3 km")
             val df = DecimalFormat("#.#")
             holder.distance.text = "${df.format(distanceInKm)} km"
             holder.distance.visibility = View.VISIBLE
         } else {
-            // Agar doori calculate nahi hui hai, to hide kar do
             holder.distance.visibility = View.GONE
         }
 
-        // ❤️ Favorite icon - CHECK FAVORITESMANAGER (monastery name se)
+        // ❤️ Favorite icon
         val isFav = FavoritesManager.isFavorite(monasteryName)
         holder.favIcon.setImageResource(
             if (isFav) R.drawable.ic_favorite_filled
             else R.drawable.favorite
         )
 
-        // ❤️ Favorite icon Click Listener - UPDATED WITH FAVORITESMANAGER
         holder.favIcon.setOnClickListener {
             if (FavoritesManager.isFavorite(monasteryName)) {
-                // Remove from favorites
                 FavoritesManager.removeFavorite(monasteryName)
                 holder.favIcon.setImageResource(R.drawable.favorite)
             } else {
-                // Add to favorites
                 FavoritesManager.addFavorite(monasteryName)
                 holder.favIcon.setImageResource(R.drawable.ic_favorite_filled)
             }
-            // Sirf yeh item update ho
             notifyItemChanged(position)
         }
 
@@ -146,6 +124,22 @@ class MonasteryAdapter(
         }
     }
 
-
     override fun getItemCount(): Int = list.size
+
+    // ✅ TRANSLATED MONASTERY NAMES
+    private fun getTranslatedMonasteryName(context: android.content.Context, monasteryName: String): String {
+        return when (monasteryName) {
+            "Dubdi Monastery" -> context.getString(R.string.dubdi_name)
+            "Enchey Monastery" -> context.getString(R.string.enchey_name)
+            "Gonjang Monastery" -> context.getString(R.string.gonjang_name)
+            "Kewzing Monastery" -> context.getString(R.string.kewzing_name)
+            "Labrang Monastery" -> context.getString(R.string.labrang_name)
+            "Phodong Monastery" -> context.getString(R.string.phodong_name)
+            "Rinchenpong Monastery" -> context.getString(R.string.rinchenpong_name)
+            "Rumtek Monastery" -> context.getString(R.string.rumtek_name)
+            "Sangachoeling Monastery" -> context.getString(R.string.sangachoeling_name)
+            "Tashiding Monastery" -> context.getString(R.string.tashiding_name)
+            else -> monasteryName
+        }
+    }
 }

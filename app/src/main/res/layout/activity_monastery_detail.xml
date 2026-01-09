@@ -183,7 +183,7 @@
                     android:id="@+id/txtReviews"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(455 Review)"
+                    android:text="@string/_455_review"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:layout_marginStart="4dp" />
@@ -422,7 +422,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="16dp"
-                        android:text="Tap to view full map"
+                        android:text="@string/tap_to_view_full_map"
                         android:textColor="#5B4ECC"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -533,7 +533,7 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Bottom Book Visit Button -->
+    <!-- Bottom View Manuscript Button -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -559,7 +559,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/price"
+                    android:text="Explore"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
                     android:alpha="0.7" />
@@ -568,7 +568,7 @@
                     android:id="@+id/txtPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/price_amount"
+                    android:text="Manu   script"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -577,10 +577,10 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnBookVisit"
+                android:id="@+id/btnViewManuscript"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/book_visit"
+                android:text="View Manuscript"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold"

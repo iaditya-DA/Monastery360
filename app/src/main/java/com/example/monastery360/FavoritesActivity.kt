@@ -17,7 +17,7 @@ import com.example.monastery360.repository.MonasteryRepository
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
-class FavoritesActivity : AppCompatActivity() {
+class FavoritesActivity : BaseActivity() {
 
     private lateinit var recyclerFavorites: RecyclerView
     private lateinit var emptyText: TextView

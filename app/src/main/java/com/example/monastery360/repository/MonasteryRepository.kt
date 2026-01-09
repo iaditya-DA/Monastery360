@@ -8,7 +8,7 @@ object MonasteryRepository {
 
         Monastery(
             // Old model fields
-            imageRes = 0, // हम URL से image लेंगे
+            imageRes = 0,
             name = "Dubdi Monastery",
             distance = "—",
             rating = 4.6f,
@@ -312,8 +312,8 @@ object MonasteryRepository {
             rating = 0f,
             reviews = 0,
 
-            latitude = 27.3153,
-            longitude = 88.3893,
+            latitude = 27.2887,
+            longitude = 88.5615,
 
             location = "Rumtek, near Gangtok",
             address = "Rumtek, near Gangtok, East Sikkim",

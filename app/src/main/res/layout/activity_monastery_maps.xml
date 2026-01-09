@@ -255,7 +255,7 @@
                         android:drawableStart="@drawable/ic_distance"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
-                        android:text="Calculating distance..."
+                        android:text="@string/calculating_distance"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:visibility="gone"

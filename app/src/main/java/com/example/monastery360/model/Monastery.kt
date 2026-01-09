@@ -1,6 +1,6 @@
 package com.example.monastery360.model
 
-data class Monastery(
+data class  Monastery(
 
     // 🔥 Old fields (NO CHANGE)
     val imageRes: Int = 0,   // now optional (because we will use URLs)

@@ -1,7 +1,7 @@
 package com.example.monastery360
 
-import android.animation.ObjectAnimator
 import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -14,10 +14,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.textfield.TextInputEditText
-import com.example.monastery360.utils.LocaleHelper
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
-
-class LoginActivity : BaseActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var bg1: ImageView
     private lateinit var bg2: ImageView
@@ -35,9 +36,8 @@ class LoginActivity : BaseActivity() {
 
     private val handler = Handler(Looper.getMainLooper())
 
-    // Hardcoded credentials
-    private val VALID_EMAIL = "admin@monastery.com"
-    private val VALID_PASSWORD = "12345"
+    // ✅ Firebase Auth instance
+    private lateinit var auth: FirebaseAuth
 
     private val runnable = object : Runnable {
         override fun run() {
@@ -83,28 +83,25 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        // Hide action bar
         supportActionBar?.hide()
 
-        // Initialize background images
+        // ✅ Firebase Auth ko initialize karein
+        auth = Firebase.auth
+
+        // ✅ Check karein ki user pehle se logged in hai ya nahi
+        if (auth.currentUser != null) {
+            navigateToMainActivity()
+            return // Baaki ka code execute na karein
+        }
+
+        // --- Baaki ka setup waisa hi rahega ---
         bg1 = findViewById(R.id.background_image1)
         bg2 = findViewById(R.id.background_image2)
-
         bg1.setImageResource(images[0])
         bg2.visibility = View.GONE
-
-        // Start background slideshow
         handler.postDelayed(runnable, 2000)
-
-        // Set click listeners
-        findViewById<Button>(R.id.login_button).setOnClickListener {
-            showLoginSheet()
-        }
-
-        findViewById<TextView>(R.id.signup_text_button).setOnClickListener {
-            showRegisterSheet()
-        }
+        findViewById<Button>(R.id.login_button).setOnClickListener { showLoginSheet() }
+        findViewById<TextView>(R.id.signup_text_button).setOnClickListener { showRegisterSheet() }
     }
 
     private fun showLoginSheet() {
@@ -115,12 +112,12 @@ class LoginActivity : BaseActivity() {
 
         val email = view.findViewById<TextInputEditText>(R.id.et_email)
         val pass = view.findViewById<TextInputEditText>(R.id.et_password)
+        val loginButton = view.findViewById<Button>(R.id.btn_bottom_sheet_login)
 
-        view.findViewById<Button>(R.id.btn_bottom_sheet_login).setOnClickListener {
+        loginButton.setOnClickListener {
             val emailText = email.text.toString().trim()
             val passText = pass.text.toString().trim()
 
-            // Validation
             if (emailText.isEmpty()) {
                 email.error = "Enter email"
                 return@setOnClickListener
@@ -130,16 +127,24 @@ class LoginActivity : BaseActivity() {
                 return@setOnClickListener
             }
 
-            // Hardcoded login check
-            if (emailText == VALID_EMAIL && passText == VALID_PASSWORD) {
-                Toast.makeText(this, "Login Successful! ✓", Toast.LENGTH_SHORT).show()
-                dialog.dismiss()
+            // ✅ Firebase se Login karein
+            loginButton.text = "Logging In..." // UI update
+            loginButton.isEnabled = false
 
-                // Navigate to MainActivity
-                navigateToMainActivity()
-            } else {
-                Toast.makeText(this, "Invalid credentials! Try: $VALID_EMAIL / $VALID_PASSWORD", Toast.LENGTH_LONG).show()
-            }
+            auth.signInWithEmailAndPassword(emailText, passText)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Login successful
+                        Toast.makeText(this, "Login Successful! ✓", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
+                        navigateToMainActivity()
+                    } else {
+                        // Login failed
+                        Toast.makeText(this, "Authentication Failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                        loginButton.text = "Login" // Reset button
+                        loginButton.isEnabled = true
+                    }
+                }
         }
     }
 
@@ -153,14 +158,15 @@ class LoginActivity : BaseActivity() {
         val email = view.findViewById<TextInputEditText>(R.id.et_email)
         val pass = view.findViewById<TextInputEditText>(R.id.et_password)
         val confirmPass = view.findViewById<TextInputEditText>(R.id.et_confirm_password)
+        val registerButton = view.findViewById<Button>(R.id.btn_register)
 
-        view.findViewById<Button>(R.id.btn_register).setOnClickListener {
+        registerButton.setOnClickListener {
             val nameText = name.text.toString().trim()
             val emailText = email.text.toString().trim()
             val passText = pass.text.toString().trim()
             val confirmPassText = confirmPass.text.toString().trim()
 
-            // Validation
+            // --- VALIDATION SECTION ---
             if (nameText.isEmpty()) {
                 name.error = "Enter name"
                 return@setOnClickListener
@@ -173,6 +179,11 @@ class LoginActivity : BaseActivity() {
                 pass.error = "Enter password"
                 return@setOnClickListener
             }
+            // ✅ ADDED: Password length validation
+            if (passText.length < 6) {
+                pass.error = "Password must be at least 6 characters"
+                return@setOnClickListener
+            }
             if (confirmPassText.isEmpty()) {
                 confirmPass.error = "Confirm password"
                 return@setOnClickListener
@@ -182,28 +193,33 @@ class LoginActivity : BaseActivity() {
                 return@setOnClickListener
             }
 
-            // Registration successful (hardcoded)
-            Toast.makeText(this, "Registration Successful! Please login.", Toast.LENGTH_SHORT).show()
-            dialog.dismiss()
+            // --- FIREBASE REGISTRATION ---
+            registerButton.text = "Registering..."
+            registerButton.isEnabled = false
 
-            // Show login sheet
-            showLoginSheet()
-        }
-
-        // Optional: Social login icons
-        view.findViewById<ImageView>(R.id.iv_google_register)?.setOnClickListener {
-            Toast.makeText(this, "Google login coming soon!", Toast.LENGTH_SHORT).show()
-        }
-
-        view.findViewById<ImageView>(R.id.iv_facebook_register)?.setOnClickListener {
-            Toast.makeText(this, "Facebook login coming soon!", Toast.LENGTH_SHORT).show()
+            auth.createUserWithEmailAndPassword(emailText, passText)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Registration successful
+                        Toast.makeText(this, "Registration Successful! Please login.", Toast.LENGTH_LONG).show()
+                        dialog.dismiss()
+                        showLoginSheet() // User ko login sheet par bhej dein
+                    } else {
+                        // Registration failed
+                        Toast.makeText(this, "Registration Failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                        registerButton.text = "Register" // Reset button
+                        registerButton.isEnabled = true
+                    }
+                }
         }
     }
 
     private fun navigateToMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
+        // Back stack clear kar dein taaki user login screen par wapas na aa sake
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-        finish() // Close login activity so user can't go back
+        finish()
     }
 
     override fun onDestroy() {

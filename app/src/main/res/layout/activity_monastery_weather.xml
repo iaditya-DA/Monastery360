@@ -44,7 +44,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Weather Updates"
+                    android:text="@string/weather_updates"
                     android:textSize="22sp"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Real-time weather for all monasteries"
+                android:text="@string/real_time_weather_for_all_monasteries"
                 android:textSize="13sp"
                 android:textColor="#E0E0E0"
                 android:layout_marginTop="4dp"
@@ -73,14 +73,14 @@
                 android:id="@+id/txtLastUpdated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last updated: Loading..."
+                android:text="@string/last_updated_loading"
                 android:textSize="11sp"
                 android:textColor="#BDBDBD"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="48dp"
                 android:drawableStart="@drawable/ic_clock"
                 android:drawablePadding="4dp"
-                android:drawableTint="#BDBDBD" />
+                app:drawableTint="#BDBDBD" />
 
         </LinearLayout>
 

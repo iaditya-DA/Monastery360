@@ -2,6 +2,25 @@
 <resources>
     <string name="app_name">Monastery 360</string>
 
+    <!-- Profile Menu -->
+    <string name="menu_favourites">पसंदीदा</string>
+    <string name="menu_languages">भाषाएं</string>
+    <string name="menu_location">स्थान</string>
+    <string name="menu_clear_cache">कैश साफ करें</string>
+    <string name="menu_clear_history">इतिहास साफ करें</string>
+    <string name="menu_logout">लॉगआउट करें</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_clear_cache">कैश साफ करें</string>
+    <string name="dialog_clear_history">इतिहास साफ करें</string>
+    <string name="dialog_logout">लॉगआउट करें</string>
+    <string name="dialog_are_you_sure">क्या आप सुनिश्चित हैं?</string>
+    <string name="dialog_logout_confirm">क्या आप लॉगआउट करना चाहते हैं?</string>
+    <string name="dialog_cache_cleared">कैश साफ हो गया</string>
+    <string name="dialog_history_cleared">इतिहास साफ हो गया</string>
+    <string name="dialog_yes">हाँ</string>
+    <string name="dialog_no">नहीं</string>
+
     <!-- Language Selection -->
     <string name="select_language">भाषा चुनें</string>
     <string name="english">English</string>
@@ -9,91 +28,257 @@
     <string name="nepali">नेपाली</string>
 
     <!-- Login Activity -->
-    <string name="dont_wait">इंतजार न करें।</string>
-    <string name="get_best_experience">अभी सबसे अच्छा अनुभव प्राप्त करें!</string>
-    <string name="log_in">लॉग इन करें</string>
+    <string name="dont_wait">प्रतीक्षा मत करो।</string>
+    <string name="get_best_experience">अभी सर्वोत्तम अनुभव प्राप्त करें!</string>
+    <string name="log_in">लॉगिन करें</string>
     <string name="dont_have_account">खाता नहीं है? साइन अप करें</string>
 
     <!-- Start Activity -->
-    <string name="explore_journey">अपनी पसंदीदा\nयात्रा का अन्वेषण करें</string>
-    <string name="make_life_better">आइए अपने जीवन को बेहतर बनाएं</string>
-    <string name="go">शुरू करें</string>
+    <string name="explore_journey">अपनी पसंद की\nयात्रा अन्वेषण करें</string>
+    <string name="make_life_better">आइए अपनी जीवन को बेहतर बनाएं</string>
+    <string name="go">चलो</string>
 
     <!-- Login Bottom Sheet -->
     <string name="email">ईमेल</string>
     <string name="password">पासवर्ड</string>
-    <string name="or_login_using">या लॉगिन करें</string>
+    <string name="or_login_using">या इसका उपयोग करके लॉगिन करें</string>
 
     <!-- Register Bottom Sheet -->
     <string name="full_name">पूरा नाम</string>
     <string name="confirm_password">पासवर्ड की पुष्टि करें</string>
     <string name="create_account">खाता बनाएं</string>
-    <string name="or_continue_with">या जारी रखें</string>
+    <string name="or_continue_with">या इसके साथ जारी रखें</string>
 
     <!-- Main Activity (Home) -->
-    <string name="greeting_name">नमस्ते जेनेलिया</string>
+    <string name="greeting_name">हाय जेनेलिया</string>
     <string name="good_morning">सुप्रभात!</string>
-    <string name="profile_image">प्रोफ़ाइल चित्र</string>
+    <string name="profile_image">प्रोफाइल छवि</string>
     <string name="notifications">सूचनाएं</string>
-    <string name="search">खोजें</string>
-    <string name="search_hint">मठों को खोजें...</string>
+    <string name="search">खोज</string>
+    <string name="search_hint">मठ खोजें...</string>
     <string name="filter">फ़िल्टर</string>
     <string name="popular">लोकप्रिय</string>
     <string name="recommended">अनुशंसित</string>
-    <string name="show_all">सभी देखें</string>
+    <string name="show_all">सभी दिखाएं</string>
     <string name="what_we_offer">हम क्या प्रदान करते हैं</string>
 
     <!-- Monastery Names -->
-    <string name="rumtek">रुमटेक</string>
-    <string name="pemayangtse">पेमायंग्त्से</string>
-    <string name="tashiding">ताशीदिंग</string>
+    <string name="rumtek">रूमटेक</string>
+    <string name="pemayangtse">पेमायांग्त्से</string>
+    <string name="tashiding">तश्डिङ</string>
     <string name="enchey">एन्चे</string>
-    <string name="dubdi">डुबडी</string>
+    <string name="dubdi">डुब्डी</string>
 
     <!-- What We Offer Section -->
-    <string name="virtual_tours">वर्चुअल टूर</string>
-    <string name="virtual_tours_desc">360° दृश्यों के माध्यम से गंतव्यों का अन्वेषण करें</string>
+    <string name="virtual_tours">आभासी दौरे</string>
+    <string name="virtual_tours_desc">360° विचारों के माध्यम से गंतव्यों का अन्वेषण करें</string>
     <string name="local_guides">स्थानीय गाइड</string>
-    <string name="local_guides_desc">अनुभवी स्थानीय गाइडों से जुड़ें</string>
+    <string name="local_guides_desc">अनुभवी स्थानीय गाइड के साथ जुड़ें</string>
     <string name="travel_tips">यात्रा सुझाव</string>
-    <string name="travel_tips_desc">अंदरूनी सुझाव और अनुशंसाएं प्राप्त करें</string>
+    <string name="travel_tips_desc">अंदरूनी सुझाव और सिफारिशें प्राप्त करें</string>
     <string name="weather_updates">मौसम अपडेट</string>
-    <string name="weather_updates_desc">योजना बनाने के लिए वास्तविक समय की मौसम जानकारी</string>
+    <string name="weather_updates_desc">योजना के लिए रीयल-टाइम मौसम जानकारी</string>
 
     <!-- Bottom Navigation -->
     <string name="home">होम</string>
     <string name="favorite">पसंदीदा</string>
     <string name="planning">योजना</string>
-    <string name="profile">प्रोफ़ाइल</string>
+    <string name="profile">प्रोफाइल</string>
 
     <!-- All Monasteries Activity -->
     <string name="all_monasteries">सभी मठ</string>
-    <string name="search_monasteries">खोजें...</string>
+    <string name="search_monasteries">खोज...</string>
 
     <!-- Monastery Detail Activity -->
-    <string name="welcome_to">में आपका स्वागत है</string>
-    <string name="rumtek_monastery">रुमटेक मठ</string>
+    <string name="welcome_to">में स्वागत है</string>
+    <string name="rumtek_monastery">रूमटेक मठ</string>
     <string name="reviews">समीक्षा</string>
     <string name="audio_guide">ऑडियो गाइड</string>
     <string name="audio_duration">5:30 मिनट • हिंदी</string>
     <string name="play_audio">ऑडियो गाइड चलाएं</string>
     <string name="download_audio">ऑडियो डाउनलोड करें</string>
-    <string name="located_in">में स्थित</string>
+    <string name="located_in">स्थित है</string>
     <string name="gangtok_sikkim">गंगटोक, सिक्किम</string>
-    <string name="gangtok_address">गंगटोक, पूर्वी सिक्किम</string>
-    <string name="monastery_description">रुमटेक मठ, सिक्किम में स्थित, ग्रह पर सबसे आश्चर्यजनक प्राकृतिक चमत्कारों में से एक है। लाखों वर्षों में कोलोराडो नदी द्वारा उकेरा गया, ग्रैंड कैन्यन एक लुभावनी जगह है...</string>
-    <string name="read_more">और पढ़ें</string>
+    <string name="gangtok_address">गंगटोक, पूर्व सिक्किम</string>
+    <string name="monastery_description">रूमटेक मठ, सिक्किम में स्थित, ग्रह पर सबसे अद्भुत प्राकृतिक आश्चर्यों में से एक है। कोलोराडो नदी द्वारा लाखों वर्षों में खोदा गया, ग्रैंड कैनियन एक लुभावना...</string>
+    <string name="read_more">अधिक पढ़ें</string>
     <string name="location">स्थान</string>
-    <string name="property_highlights">संपत्ति की मुख्य विशेषताएं</string>
+    <string name="property_highlights">संपत्ति हाइलाइट्स</string>
     <string name="top_location">शीर्ष स्थान</string>
     <string name="top_location_desc">दक्षिण रिम सबसे अधिक देखा जाने वाला क्षेत्र है</string>
-    <string name="price">मूल्य</string>
+    <string name="price">कीमत</string>
     <string name="price_amount">₹500/व्यक्ति</string>
     <string name="book_visit">यात्रा बुक करें</string>
 
     <!-- Common -->
     <string name="back">वापस</string>
-    <string name="share">शेयर करें</string>
-    <string name="map">मानचित्र</string>
+    <string name="share">साझा करें</string>
+    <string name="map">नक्शा</string>
+    <string name="image_counter">छवि_काउंटर</string>
+    <string name="monastery">मठ</string>
+    <string name="change_language">भाषा बदलें</string>
+    <string name="my_location">मेरा स्थान</string>
+    <string name="_2_30_english">2:30 • हिंदी</string>
+    <string name="tap_marker_to_view_details">विवरण देखने के लिए मार्कर को टैप करें</string>
+    <string name="directions">दिशाएं</string>
+    <string name="no_favorites_yet">अभी कोई पसंदीदा नहीं\n</string>
+    <string name="my_favorites">मेरा पसंदीदा\n</string>
+    <string name="edit_profile">प्रोफाइल संपादित करें</string>
+    <string name="first_name">पहला नाम</string>
+    <string name="enter_first_name">पहला नाम दर्ज करें</string>
+    <string name="last_name">अंतिम नाम</string>
+    <string name="enter_last_name">अंतिम नाम दर्ज करें</string>
+    <string name="username">यूजरनेम</string>
+    <string name="enter_username">यूजरनेम दर्ज करें</string>
+    <string name="enter_email">ईमेल दर्ज करें</string>
+    <string name="phone_number">फोन नंबर</string>
+    <string name="enter_phone_number">फोन नंबर दर्ज करें</string>
+    <string name="change_password">पासवर्ड बदलें</string>
+    <string name="save_changes">परिवर्तन सहेजें</string>
+    <string name="clear_sky">साफ आसमान</string>
+    <string name="feels_like_16_c">16°C जैसा लगता है</string>
+    <string name="humidity">आर्द्रता</string>
+    <string name="_12_km_h">12 किमी/घंटा</string>
+    <string name="wind">हवा</string>
+    <string name="clouds">बादल</string>
+    <string name="excellent_for_trip">✓ यात्रा के लिए उत्कृष्ट</string>
+    <string name="perfect_weather_for_monastery_visit_clear_skies_and_pleasant_temperature">मठ की यात्रा के लिए परिपूर्ण मौसम! साफ आसमान और सुखद तापमान।</string>
+    <string name="monastery_image">मठ छवि</string>
+    <string name="my_profile">मेरी प्रोफाइल</string>
+    <string name="settings">सेटिंग्स</string>
+    <string name="user_name">उपयोगकर्ता नाम</string>
+    <string name="user_email_com">user@email.com</string>
+    <string name="real_time_weather_for_all_monasteries">सभी मठों के लिए रीयल-टाइम मौसम</string>
+    <string name="last_updated_loading">अंतिम अपडेट: लोड हो रहा है...</string>
+    <string name="calculating_distance">दूरी की गणना की जा रही है...</string>
+    <string name="_455_review">(455 समीक्षा)</string>
+    <string name="tap_to_view_full_map">पूर्ण मानचित्र देखने के लिए टैप करें</string>
+    <string name="your_current_location">आपका वर्तमान स्थान</string>
+    <string name="tap_below_to_open_google_maps_with_your_current_location">अपने वर्तमान स्थान के साथ गूगल मैप्स खोलने के लिए नीचे टैप करें</string>
+    <string name="open_in_google_maps">गूगल मैप्स में खोलें</string>
+    <string name="location_features">स्थान सुविधाएं:</string>
+    <string name="check">जांचें</string>
+    <string name="real_time_location_tracking">रीयल-टाइम स्थान ट्रैकिंग</string>
+    <string name="satellite_view_available">उपग्रह दृश्य उपलब्ध</string>
+    <string name="directions_to_monasteries">मठों की दिशाएं</string>
+
+
+    <!-- Dubdi Monastery -->
+    <string name="dubdi_name">डुब्डी मठ</string>
+    <string name="dubdi_location">युकसोम, पश्चिम सिक्किम</string>
+    <string name="dubdi_price">₹200/व्यक्ति</string>
+    <string name="dubdi_description">डुब्डी मठ, जिसे युकसोम मठ के नाम से भी जाना जाता है, सिक्किम के सबसे पुराने और ऐतिहासिक रूप से महत्वपूर्ण मठों में से एक है। सिक्किम के पहले राजा चोग्याल नामग्याल द्वारा 1701 में स्थापित, यह सिक्किमी बौद्ध धर्म की उत्पत्ति का प्रतीक है। युकसोम के ऊपर एक शांत पहाड़ी पर स्थित, मठ घने जंगलों, नरम पर्वत हवा और शांतिपूर्ण प्राकृतिक सौंदर्य से घिरा हुआ है। पारंपरिक तिब्बती शैली में निर्मित, इसमें सफेद पुताई की दीवारें, एक स्तरीय सुनहरी घंटी के आकार की छत, प्राचीन पांडुलिपियां और बौद्ध देवताओं की सुंदरता से संरक्षित मूर्तियां हैं।</string>
+    <string name="dubdi_altitude">2100 मीटर</string>
+    <string name="dubdi_sect">न्यिंगमा बौद्ध धर्म</string>
+    <string name="dubdi_founded">1701</string>
+
+    <!-- Enchey Monastery -->
+    <string name="enchey_name">एंचे मठ</string>
+    <string name="enchey_location">गंगटोक, सिक्किम</string>
+    <string name="enchey_price">₹150/व्यक्ति</string>
+    <string name="enchey_description">एंचे मठ, गंगटोक के ऊपर एक शांत पहाड़ी पर स्थित, सिक्किम के सबसे महत्वपूर्ण और आध्यात्मिक रूप से सम्मानित मठों में से एक है। 200 साल पहले बनाया गया और बाद में 1909 में नवीनीकृत, यह तिब्बती बौद्ध धर्म के न्यिंगमा संप्रदाय से संबंधित है। "एंचे" का नाम "एकान्त मंदिर" का अर्थ है, जो पाइन के पेड़ों से घिरी अपनी शांतिपूर्ण और सेवानिवृत्त सेटिंग को प्रतिबिंबित करता है और कंचनजंगा श्रृंखला के विस्तृत दृश्य प्रदान करता है।</string>
+    <string name="enchey_altitude">1850 मीटर</string>
+    <string name="enchey_sect">न्यिंगमा बौद्ध धर्म</string>
+    <string name="enchey_founded">1840</string>
+
+    <!-- Gonjang Monastery -->
+    <string name="gonjang_name">गोन्जांग मठ</string>
+    <string name="gonjang_location">ताशी व्यू पॉइंट के पास, गंगटोक</string>
+    <string name="gonjang_price">₹150/व्यक्ति</string>
+    <string name="gonjang_description">गोन्जांग मठ प्रसिद्ध ताशी व्यू पॉइंट के पास स्थित एक अपेक्षाकृत आधुनिक लेकिन महत्वपूर्ण मठ है। इसे 1981 ईस्वी में एच.ई. तिंग्क्ये गोन्जांग रिम्पोचे द्वारा स्थापित किया गया था और न्यिंगमा संप्रदाय से संबंधित है। अपनी हाल की स्थापना के बावजूद, यह स्थानीय बौद्ध समुदाय के लिए एक महत्वपूर्ण केंद्र बन गया है। मठ को जीवंत रंगों और पारंपरिक तिब्बती वास्तुकला तत्वों के साथ सुंदरता से निर्मित किया गया है। मुख्य सभा हॉल बौद्ध शास्त्रों के दृश्य और गुरु पद्मसंभव, प्रभु बुद्ध और अन्य देवताओं की भव्य मूर्तियों के साथ सजाया गया है।</string>
+    <string name="gonjang_altitude">2,050 मीटर (6,725 फीट) लगभग</string>
+    <string name="gonjang_sect">न्यिंगमा</string>
+    <string name="gonjang_founded">1981</string>
+
+    <!-- Kewzing Monastery -->
+    <string name="kewzing_name">केवजिंग मठ</string>
+    <string name="kewzing_location">केवजिंग गांव, दक्षिण सिक्किम</string>
+    <string name="kewzing_price">निःशुल्क</string>
+    <string name="kewzing_description">केवजिंग मठ, दक्षिण सिक्किम के शांत, मनोरम केवजिंग गांव में स्थित, बौद्ध धर्म के न्यिंगमा संप्रदाय से संबंधित एक आकर्षक और ऐतिहासिक रूप से महत्वपूर्ण मठ है। इसे 1888 ईस्वी में स्थापित किया गया था और यह क्षेत्र में स्थानीय लेप्चा और भूटिया समुदायों द्वारा बनाई गई मजबूत बौद्ध परंपराओं का प्रमाण है। मठ परिसर पारंपरिक सिक्किमी और तिब्बती वास्तुकला की विशेषता है, जिसमें एक ढलान वाली छत, जटिल लकड़ी का काम और एक मुख्य सभा हॉल (ल्हाखांग) है जो जीवंत भित्तिचित्रों और धार्मिक चित्रकला से सजाया गया है।</string>
+    <string name="kewzing_altitude">1,550 मीटर (5,085 फीट) लगभग</string>
+    <string name="kewzing_sect">न्यिंगमा</string>
+    <string name="kewzing_founded">1888</string>
+
+    <!-- Labrang Monastery -->
+    <string name="labrang_name">लाब्रांग मठ</string>
+    <string name="labrang_location">फोडोंग के पास, उत्तर सिक्किम राजमार्ग</string>
+    <string name="labrang_price">निःशुल्क</string>
+    <string name="labrang_description">लाब्रांग मठ फोडोंग के पास, उत्तर सिक्किम राजमार्ग के ठीक बाहर स्थित एक महत्वपूर्ण धार्मिक स्थल है। 1814 ईस्वी में स्थापित, यह न्यिंगमा संप्रदाय से संबंधित है, जो इसे पास के फोडोंग मठ से अलग करता है, जो कागयु संप्रदाय का पालन करता है। यह अद्वितीय सह-अस्तित्व न्यिंगमा और कागयु मठों के बीच क्षेत्र के धार्मिक सामंजस्य और सांस्कृतिक गहराई के इतिहास को दर्शाता है। मठ को सिक्किम के आठवें चोग्याल त्सुग्फुद नामग्याल द्वारा अपने शिक्षक लामा जामयांग तशी की स्मृति में बनवाया गया था।</string>
+    <string name="labrang_altitude">1,700 मीटर (5,577 फीट) लगभग</string>
+    <string name="labrang_sect">न्यिंगमा</string>
+    <string name="labrang_founded">1814</string>
+
+    <!-- Phodong Monastery -->
+    <string name="phodong_name">फोडोंग मठ</string>
+    <string name="phodong_location">फोडोंग, उत्तर सिक्किम राजमार्ग</string>
+    <string name="phodong_price">निःशुल्क</string>
+    <string name="phodong_description">फोडोंग मठ सिक्किम के छह सबसे महत्वपूर्ण मठों में से एक है, जो पूर्व राजधानी तुमलोंग के करीब होने के लिए ऐतिहासिक रूप से महत्वपूर्ण है। यह कागयु संप्रदाय का एक प्रमुख मठ है, जिसे चोग्याल ग्यूरमेड नामग्याल द्वारा 1740 ईस्वी में स्थापित किया गया था। मठ शानदार भित्तिचित्रों, उत्कृष्ट भित्तिचित्रों और प्राचीन दीवार चित्रों के लिए प्रसिद्ध है, और इसमें 260 से अधिक भिक्षु हैं जो उत्तर सिक्किम में बौद्ध शिक्षा का एक प्रमुख केंद्र है।</string>
+    <string name="phodong_altitude">1,500 मीटर (4,920 फीट) लगभग</string>
+    <string name="phodong_sect">कागयु</string>
+    <string name="phodong_founded">1740</string>
+
+    <!-- Rinchenpong Monastery -->
+    <string name="rinchenpong_name">रिन्चेनपोंग मठ</string>
+    <string name="rinchenpong_location">रिन्चेनपोंग, पश्चिम सिक्किम</string>
+    <string name="rinchenpong_price">निःशुल्क</string>
+    <string name="rinchenpong_description">रिन्चेनपोंग मठ पश्चिम सिक्किम के रिन्चेनपोंग गांव के पास स्थित एक ऐतिहासिक और शांत मठ है, जो खांगचेनद्जोंगा श्रृंखला के शानदार दृश्य प्रदान करता है। 1730 ईस्वी में स्थापित, यह तिब्बती बौद्ध धर्म के कागयु क्रम से संबंधित है। मठ अपेक्षाकृत छोटा है लेकिन क्षेत्र में बौद्ध धर्म के प्रारंभिक प्रसार के साथ अपने संबंध के कारण ऐतिहासिक रूप से महत्वपूर्ण है। यह भगवान बुद्ध की पवित्र मूर्ति के लिए प्रसिद्ध है और भिक्षुओं द्वारा किए जाने वाले पारंपरिक छाम मुखौटा नृत्य के साथ एक वार्षिक त्योहार का आयोजन करता है।</string>
+    <string name="rinchenpong_altitude">1,740 मीटर (5,709 फीट) लगभग</string>
+    <string name="rinchenpong_sect">कागयु</string>
+    <string name="rinchenpong_founded">1730</string>
+
+    <!-- Rumtek Monastery -->
+    <string name="rumtek_name">रूमटेक मठ</string>
+    <string name="rumtek_location">रूमटेक, गंगटोक के पास</string>
+    <string name="rumtek_price">निःशुल्क</string>
+    <string name="rumtek_description">रूमटेक मठ, आधिकारिक रूप से धर्म चक्र केंद्र, सिक्किम का सबसे बड़ा और सबसे महत्वपूर्ण मठ है। गंगटोक से 24 किमी दूर एक रिज पर स्थित, यह घाटी को देखते हुए, यह 900 साल पुरानी कर्म कागयु लिनेज के प्रमुख ग्यालवा कर्मापा की निर्वासित सीट के रूप में कार्य करता है। मूलतः 1734 में 9वें कर्मापा द्वारा स्थापित, मठ खंडहर में पड़ा था जब तक कि 1960 के दशक में 16वें कर्मापा ने तिब्बत से भागने के बाद वर्तमान परिसर का निर्माण नहीं किया।</string>
+    <string name="rumtek_altitude">1,662 मीटर (5,450 फीट)</string>
+    <string name="rumtek_sect">कागयु</string>
+    <string name="rumtek_founded">1962</string>
+
+    <!-- Sangachoeling Monastery -->
+    <string name="sangachoeling_name">संगाचोलिंग मठ</string>
+    <string name="sangachoeling_location">पेलिंग, पश्चिम सिक्किम</string>
+    <string name="sangachoeling_price">निःशुल्क</string>
+    <string name="sangachoeling_description">संगाचोलिंग मठ, जिसे संगे चोलिंग के रूप में भी लिखा जाता है, को सिक्किम का दूसरा सबसे पुराना मठ माना जाता है, जिसे 1697 ईस्वी में स्थापित किया गया था। नाम का अर्थ है "गुह्यमंत्र शिक्षाओं का द्वीप" या "गुप्त मंत्रों का स्थान", जो वज्रयान बौद्ध धर्म को संदर्भित करता है। लामा ल्हात्सुन चेम्पो द्वारा स्थापित, जिन्होंने पेमायांग्त्से मठ की भी स्थापना की, यह पेलिंग के पास स्थित है। मठ में जंगल के माध्यम से एक दृश्य पहाड़ी चढ़ाई की आवश्यकता होती है, जो कंचनजंगा पर्वत सहित हिमालय पर्वत श्रृंखलाओं के विस्तृत दृश्यों में समाप्त होती है।</string>
+    <string name="sangachoeling_altitude">2,100 मीटर (6,890 फीट) लगभग</string>
+    <string name="sangachoeling_sect">न्यिंगमा</string>
+    <string name="sangachoeling_founded">1697</string>
+
+    <!-- Tashiding Monastery -->
+    <string name="tashiding_name">ताशिडिंग मठ</string>
+    <string name="tashiding_location">ताशिडिंग गांव, पश्चिम सिक्किम</string>
+    <string name="tashiding_price">निःशुल्क</string>
+    <string name="tashiding_description">ताशिडिंग मठ, जिसे "समर्पित केंद्रीय महिमा" के रूप में जाना जाता है, को सिक्किम का सबसे पवित्र मठ माना जाता है और इसे सिक्किम का "हृदय" माना जाता है। राठोंग और रंगित नदियों के संगम पर एक हृदय-आकार की पहाड़ी के शीर्ष पर स्थित, यह गुरु पद्मसंभव द्वारा पवित्र है जिन्होंने 8वीं शताब्दी में इस स्थल को आशीर्वाद दिया था। 1641 ईस्वी में न्गादक सेम्पा चेम्पो द्वारा स्थापित, जो सिक्किम के पहले चोग्याल को अभिषेक करने वाले तीन लामाओं में से एक था, ताशिडिंग न्यिंगमा क्रम का एक मुख्य मठ है।</string>
+    <string name="tashiding_altitude">1,465 मीटर (4,800 फीट) लगभग</string>
+    <string name="tashiding_sect">न्यिंगमा</string>
+    <string name="tashiding_founded">1641</string>
+    <string name="audio_welcome">आपका स्वागत है</string>
+    <string name="audio_located">स्थित है</string>
+    <string name="audio_address">पता</string>
+    <string name="camera">कैमरा</string>
+    <string name="captured_image">कैप्चर की गई छवि</string>
+    <string name="monastery_scanner">मठ स्कैनर</string>
+    <string name="click_button_below_to_capture_monastery_photo">📸 नीचे दिए गए बटन पर क्लिक करके मठ की फोटो कैप्चर करें</string>
+    <string name="capture_photo">📷 फोटो कैप्चर करें</string>
+
+    <string name="plan_your_trip">अपनी यात्रा की योजना बनाएं</string>
+    <string name="where_do_you_want_to_explore">📍 आप कहाँ घूमना चाहते हैं?</string>
+    <string name="how_many_days">⏰ कितने दिनों की यात्रा?</string>
+    <string name="who_are_you_traveling_with">👥 आप किसके साथ यात्रा कर रहे हैं?</string>
+
+    <string name="solo">अकेले</string>
+    <string name="couple">युगल</string>
+    <string name="family">परिवार</string>
+
+    <string name="what_interests_you">❤️ आपकी रुचि क्या है?</string>
+    <string name="cultural">सांस्कृतिक</string>
+    <string name="adventure">रोमांच</string>
+    <string name="nature">प्रकृति</string>
+    <string name="photography">फोटोग्राफी</string>
+
+    <string name="any_special_requests">💬 कोई विशेष अनुरोध?</string>
+    <string name="tell_us_about_your_preferences">हमें अपनी पसंद के बारे में बताएं...</string>
+    <string name="plan_my_trip">✨ मेरी यात्रा योजना बनाएं</string>
+
 
 </resources>

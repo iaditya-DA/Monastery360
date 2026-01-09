@@ -10,8 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.Toast
+import com.example.monastery360.utils.LocaleHelper
 
-class ProfileActivity : AppCompatActivity() {
+class ProfileActivity : BaseActivity() {
 
     private lateinit var backButton: ImageView
     private lateinit var settingsIcon: ImageView
@@ -59,12 +60,12 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun setupMenuItems() {
         val menuItems = listOf(
-            ProfileMenuItem("Favourites", R.drawable.favorite),
-            ProfileMenuItem("Languages", R.drawable.ic_language),
-            ProfileMenuItem("Location", R.drawable.ic_location_pinic_location_pin),
-            ProfileMenuItem("Clear Cache", R.drawable.ic_clear),
-            ProfileMenuItem("Clear History", R.drawable.ic_history),
-            ProfileMenuItem("Log Out", R.drawable.ic_logout)
+            ProfileMenuItem(getString(R.string.menu_favourites), R.drawable.favorite),
+            ProfileMenuItem(getString(R.string.menu_languages), R.drawable.ic_language),
+            ProfileMenuItem(getString(R.string.menu_location), R.drawable.ic_location_pinic_location_pin),
+            ProfileMenuItem(getString(R.string.menu_clear_cache), R.drawable.ic_clear),
+            ProfileMenuItem(getString(R.string.menu_clear_history), R.drawable.ic_history),
+            ProfileMenuItem(getString(R.string.menu_logout), R.drawable.ic_logout)
         )
 
         profileMenuAdapter = ProfileMenuAdapter(menuItems) { item ->
@@ -77,27 +78,36 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun handleMenuClick(itemTitle: String) {
         when (itemTitle) {
-            "Favourites" -> {
+            getString(R.string.menu_favourites) -> {
                 startActivity(Intent(this, FavoritesActivity::class.java))
             }
-            "Languages" -> {
-                startActivity(Intent(this, LanguageSelectionActivity::class.java))
+            getString(R.string.menu_languages) -> {
+                showLanguageSelectionDialog()  // ✅ Change here
             }
-            "Location" -> {
+            getString(R.string.menu_location) -> {
                 startActivity(Intent(this, LocationMapActivity::class.java))
             }
-            "Clear Cache" -> {
-                showConfirmDialog("Clear Cache", "Are you sure?") {
-                    Toast.makeText(this, "Cache cleared", Toast.LENGTH_SHORT).show()
+            getString(R.string.menu_clear_cache) -> {
+                showConfirmDialog(
+                    getString(R.string.dialog_clear_cache),
+                    getString(R.string.dialog_are_you_sure)
+                ) {
+                    Toast.makeText(this, getString(R.string.dialog_cache_cleared), Toast.LENGTH_SHORT).show()
                 }
             }
-            "Clear History" -> {
-                showConfirmDialog("Clear History", "Are you sure?") {
-                    Toast.makeText(this, "History cleared", Toast.LENGTH_SHORT).show()
+            getString(R.string.menu_clear_history) -> {
+                showConfirmDialog(
+                    getString(R.string.dialog_clear_history),
+                    getString(R.string.dialog_are_you_sure)
+                ) {
+                    Toast.makeText(this, getString(R.string.dialog_history_cleared), Toast.LENGTH_SHORT).show()
                 }
             }
-            "Log Out" -> {
-                showConfirmDialog("Log Out", "Are you sure you want to logout?") {
+            getString(R.string.menu_logout) -> {
+                showConfirmDialog(
+                    getString(R.string.dialog_logout),
+                    getString(R.string.dialog_logout_confirm)
+                ) {
                     logout()
                 }
             }
@@ -108,9 +118,37 @@ class ProfileActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton("Yes") { _, _ -> onConfirm() }
-            .setNegativeButton("No", null)
+            .setPositiveButton(getString(R.string.dialog_yes)) { _, _ -> onConfirm() }
+            .setNegativeButton(getString(R.string.dialog_no), null)
             .show()
+    }
+
+    // ✅ ADD YE 2 FUNCTIONS
+    private fun showLanguageSelectionDialog() {
+        val languages = arrayOf("English", "हिंदी", "नेपाली")
+        val langCodes = arrayOf("en", "hi", "ne")
+
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Select Language")
+            .setItems(languages) { _, which ->
+                setLanguage(langCodes[which])
+            }
+            .show()
+    }
+
+    private fun setLanguage(langCode: String) {
+        val prefs = getSharedPreferences("AppSettings", MODE_PRIVATE)
+        prefs.edit().putString("language", langCode).apply()
+
+        LocaleHelper.setLocale(this, langCode)
+
+        // ✅ ProfileActivity recreate kar
+        recreate()
+
+        // ✅ Optional: MainActivity ko refresh karne ke liye
+        sendBroadcast(Intent("LANGUAGE_CHANGED"))
+
+        Toast.makeText(this, "Language changed", Toast.LENGTH_SHORT).show()
     }
 
     private fun logout() {
@@ -125,6 +163,3 @@ class ProfileActivity : AppCompatActivity() {
         finish()
     }
 }
-
-
-

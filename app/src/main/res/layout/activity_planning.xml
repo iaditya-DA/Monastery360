@@ -1,0 +1,374 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7DDC5">
+
+    <!-- Header with gradient -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_gradient"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/plan_your_trip"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- District Selection -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/where_do_you_want_to_explore"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#5B4ECC"
+                        android:layout_marginBottom="12dp" />
+
+                    <Spinner
+                        android:id="@+id/districtSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Days Selection -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/how_many_days"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#5B4ECC"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btn2days"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="2"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/btn_selected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btn3days"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="3"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btn4days"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="4"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btn5days"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="5+"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Travel Type -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/who_are_you_traveling_with"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#5B4ECC"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnSolo"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="@string/solo"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/btn_selected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btnCouple"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="@string/couple"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btnFamily"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="@string/family"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Interests -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/what_interests_you"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#5B4ECC"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <Button
+                            android:id="@+id/btnCultural"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/cultural"
+                            android:textSize="12sp"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btnAdventure"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/adventure"
+                            android:textSize="12sp"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnNature"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/nature"
+                            android:textSize="12sp"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected"
+                            android:layout_marginEnd="8dp" />
+
+                        <Button
+                            android:id="@+id/btnPhotography"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/photography"
+                            android:textSize="12sp"
+                            android:textColor="#808080"
+                            android:background="@drawable/btn_unselected" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Special Requests -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/any_special_requests"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#5B4ECC"
+                        android:layout_marginBottom="12dp" />
+
+                    <EditText
+                        android:id="@+id/specialRequests"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:hint="@string/tell_us_about_your_preferences"
+                        android:background="@drawable/edittext_bg"
+                        android:padding="12dp"
+                        android:gravity="top"
+                        android:textColor="#333333"
+                        android:textColorHint="#999999" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <!-- Bottom Button -->
+    <Button
+        android:id="@+id/planMyTripBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:text="@string/plan_my_trip"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_plan"
+        android:elevation="8dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

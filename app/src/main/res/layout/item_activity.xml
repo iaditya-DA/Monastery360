@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#F9F9F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Time -->
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtActivityTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00 AM"
+                android:textSize="13sp"
+                android:textColor="#5B4ECC"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/txtActivityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visit Rumtek Monastery"
+                android:textSize="15sp"
+                android:textColor="#1A1A1A"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtActivityLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📍 Rumtek"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/txtActivityDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏱️ 2 hours"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/txtActivityNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Photography allowed, remove shoes"
+                android:textSize="11sp"
+                android:textColor="#999999"
+                android:layout_marginTop="6dp"
+                android:background="#E8F5E9"
+                android:padding="6dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
